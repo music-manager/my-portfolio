@@ -8,6 +8,13 @@ const accentStyles = {
   neutral: "bg-slate-900 text-white dark:bg-white dark:text-slate-900",
 } as const;
 
+// CTA 아래 보조 링크도 플랫폼 색을 따릅니다
+const proofStyles = {
+  naver: "text-naver decoration-naver/40 hover:decoration-naver",
+  kmong: "text-brand-700 decoration-brand-400/50 hover:decoration-brand-500 dark:text-brand-400",
+  neutral: "text-slate-500 decoration-slate-300 hover:text-slate-900 dark:hover:text-white",
+} as const;
+
 export default function Services() {
   const { services } = site;
 
@@ -63,7 +70,8 @@ export default function Services() {
               </ul>
             ) : null}
 
-            {/* CTA는 카드 높이와 상관없이 항상 맨 아래에 정렬됩니다 */}
+            {/* 보조 링크가 없는 카드도 같은 자리를 차지하게 해
+                세 카드의 CTA 버튼 줄이 항상 같은 높이에 놓입니다 */}
             <div className="mt-6 flex flex-1 flex-col justify-end gap-3">
               <a
                 href={service.href}
@@ -74,19 +82,22 @@ export default function Services() {
                 {service.cta}
                 <ArrowUpRightIcon className="size-4" />
               </a>
-              {service.proofHref ? (
-                <a
-                  href={service.proofHref}
-                  target={
-                    service.proofHref.startsWith("http") ? "_blank" : undefined
-                  }
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 text-xs font-medium text-slate-500 underline underline-offset-4 transition hover:text-slate-900 dark:text-slate-500 dark:hover:text-white"
-                >
-                  {service.proofLabel}
-                  <ArrowUpRightIcon className="size-3" />
-                </a>
-              ) : null}
+
+              <span className="flex h-5 items-center justify-center">
+                {service.proofHref ? (
+                  <a
+                    href={service.proofHref}
+                    target={
+                      service.proofHref.startsWith("http") ? "_blank" : undefined
+                    }
+                    rel="noreferrer"
+                    className={`inline-flex items-center gap-1.5 text-xs font-semibold underline underline-offset-4 transition ${proofStyles[service.accent]}`}
+                  >
+                    {service.proofLabel}
+                    <ArrowUpRightIcon className="size-3" />
+                  </a>
+                ) : null}
+              </span>
             </div>
           </li>
         ))}

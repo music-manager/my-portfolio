@@ -228,6 +228,7 @@ export const site = {
           "어떤 목적의 사이트였고 무엇을 해결했는지 한두 문장으로 적어 주세요.",
         href: "https://example.com/work-1",
         tags: ["B2B", "랜딩페이지", "반응형"],
+        thumbnail: "", // 예: "/portfolio/work-1.png" (16:9 첫 화면 캡처)
       },
       {
         client: "클라이언트 B",
@@ -235,6 +236,7 @@ export const site = {
         description: "회사 소개와 서비스 안내, 문의 동선을 구성했습니다.",
         href: "https://example.com/work-2",
         tags: ["기업 홈페이지", "반응형"],
+        thumbnail: "", // 예: "/portfolio/work-1.png" (16:9 첫 화면 캡처)
       },
       {
         client: "클라이언트 C",
@@ -243,6 +245,7 @@ export const site = {
           "여러 기능을 한곳에서 쓸 수 있도록 만든 반응형 웹 플랫폼입니다.",
         href: "https://example.com/work-3",
         tags: ["웹 플랫폼", "반응형"],
+        thumbnail: "", // 예: "/portfolio/work-1.png" (16:9 첫 화면 캡처)
       },
     ],
   },
