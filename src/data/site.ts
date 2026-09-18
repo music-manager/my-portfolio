@@ -137,7 +137,31 @@ export const site = {
     },
   ],
 
-  // ---------- 4. Contact / Social ----------
+  // ---------- 4. Music (Spotify 앨범) ----------
+  // 앨범을 추가하려면 아래 배열에 한 줄만 넣으면 됩니다.
+  // id = 스포티파이 앨범 링크에서 /album/ 뒤에 오는 문자열
+  //   예) https://open.spotify.com/album/2sDqPRdDouf4e3QkJCdASu
+  //                                      ^^^^^^^^^^^^^^^^^^^^^^ 이 부분
+  //   (?si=... 뒤에 붙는 추적 코드는 넣지 않아도 됩니다)
+  // title = 화면에는 스포티파이가 실제 앨범명을 표시하므로,
+  //         여기 값은 스크린리더·SEO용 설명으로만 쓰입니다.
+  music: {
+    heading: "발매한 앨범",
+    description:
+      "AI로 제작해 DistroKid를 통해 전 세계 스트리밍 플랫폼에 발매한 앨범입니다. 아래에서 바로 들어볼 수 있습니다.",
+    // 스포티파이 아티스트 페이지 주소를 넣으면 '전체 앨범 보기' 버튼이 표시됩니다.
+    artistUrl: "",
+    albums: [
+      { id: "2sDqPRdDouf4e3QkJCdASu", title: "앨범 1" },
+      { id: "7Gs2VT3PwKTcmqHbG5SSUz", title: "앨범 2" },
+      { id: "13N3QYzoyCxmpwlOStwqXc", title: "앨범 3" },
+      { id: "2SnsQLVwTMJ44vFlgKrPHF", title: "앨범 4" },
+      { id: "5ZQCHa4MHNXI9PiTCqzoJD", title: "앨범 5" },
+      { id: "0DRJkPikkPg0kD8Filafni", title: "앨범 6" },
+    ],
+  },
+
+  // ---------- 5. Contact / Social ----------
   contact: {
     heading: "함께 만들 이야기가 있다면",
     description:
@@ -156,10 +180,12 @@ export const site = {
   nav: [
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
+    { label: "Music", href: "#music" },
     { label: "Contact", href: "#contact" },
   ],
 };
 
 export type Site = typeof site;
 export type Project = (typeof site.projects)[number];
+export type Album = (typeof site.music.albums)[number];
 export type SocialIcon = (typeof site.socials)[number]["icon"];

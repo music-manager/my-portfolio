@@ -3,6 +3,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Music from "@/components/Music";
 import Projects from "@/components/Projects";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
+        <Music />
         <Contact />
       </main>
       <Footer />

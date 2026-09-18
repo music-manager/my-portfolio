@@ -27,6 +27,7 @@ npm run dev     # 2. 개발 서버 실행
 | 히어로 문구, 프로필 사진, 버튼 | `hero` |
 | 소개글, 보유 기술, 경력, 관심사 | `about` |
 | 프로젝트 카드 (추가/삭제 자유) | `projects` |
+| 스포티파이 앨범 목록 | `music.albums` |
 | 이메일, 연락 문구 | `contact` |
 | GitHub · 블로그 · 유튜브 링크 | `socials` |
 | 상단 메뉴 | `nav` |
@@ -35,6 +36,28 @@ npm run dev     # 2. 개발 서버 실행
 1. 사진 파일을 `public/profile.jpg` 로 복사
 2. `site.ts` 의 `hero.avatar` 를 `"/profile.jpg"` 로 변경
    (빈 값 `""` 이면 로고 심볼 마크 `public/mark.png` 가 아바타로 표시됩니다)
+
+### 앨범 추가하기 (1줄이면 끝)
+
+`src/data/site.ts` 의 `music.albums` 배열에 앨범 ID만 추가하면 됩니다.
+
+```ts
+{ id: "여기에_앨범ID", title: "앨범 7" },
+```
+
+앨범 ID는 스포티파이 링크의 `/album/` 뒤에 오는 문자열입니다.
+
+```
+https://open.spotify.com/album/2sDqPRdDouf4e3QkJCdASu?si=...
+                               └──────── 이 부분 ────────┘
+```
+
+**커버 이미지나 앨범명을 따로 넣을 필요가 없습니다.** 스포티파이 공식 임베드 플레이어가
+커버·앨범명·트랙을 항상 최신 상태로 자동 표시하고, 방문자가 사이트에서 바로 재생할 수 있습니다.
+`title` 값은 화면에 보이지 않으며 스크린리더와 SEO 용도로만 쓰입니다.
+
+`music.artistUrl` 에 스포티파이 아티스트 페이지 주소를 넣으면
+앨범 목록 아래에 "스포티파이에서 전체 앨범 보기" 버튼이 나타납니다.
 
 ### 로고 파일
 
@@ -76,7 +99,8 @@ my-portfolio/
 │  │  ├─ Hero.tsx           # 1. 메인 히어로 (한 줄 소개 + 프로필)
 │  │  ├─ About.tsx          # 2. About Me (기술 · 관심사 · 경력)
 │  │  ├─ Projects.tsx       # 3. Projects (사이트 카드 링크)
-│  │  ├─ Contact.tsx        # 4. Contact / Social
+│  │  ├─ Music.tsx          # 4. Music (스포티파이 앨범 플레이어)
+│  │  ├─ Contact.tsx        # 5. Contact / Social
 │  │  ├─ Footer.tsx
 │  │  ├─ Section.tsx        # 섹션 공통 래퍼 (제목 스타일 통일)
 │  │  ├─ ThemeToggle.tsx    # 다크모드 토글
@@ -116,6 +140,7 @@ my-portfolio/
 
 - ✅ 모바일 / 태블릿 / PC 반응형 레이아웃
 - ✅ 다크모드 (시스템 설정 자동 감지 + 수동 토글, 새로고침 시 깜빡임 없음)
+- ✅ 스포티파이 앨범 플레이어 내장 (사이트에서 바로 재생, 커버·앨범명 자동 동기화)
 - ✅ 로고 자동 적용 (헤더 워드마크는 라이트/다크 모드에 따라 자동 전환)
 - ✅ SEO 메타데이터 · Open Graph 공유 이미지 · sitemap.xml · robots.txt 자동 생성
 - ✅ 부드러운 앵커 스크롤 이동
