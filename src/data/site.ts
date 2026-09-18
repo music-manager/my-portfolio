@@ -351,8 +351,10 @@ export const site = {
   //   예) https://open.spotify.com/album/2sDqPRdDouf4e3QkJCdASu
   //                                      ^^^^^^^^^^^^^^^^^^^^^^ 이 부분
   //   (?si=... 뒤에 붙는 추적 코드는 넣지 않아도 됩니다)
-  // title = 화면에는 스포티파이가 실제 앨범명을 표시하므로,
-  //         여기 값은 스크린리더·SEO용 설명으로만 쓰입니다.
+  // title = 재생 전 카드에 표시되는 앨범명입니다.
+  // cover = 보통은 비워 두세요. 빌드할 때 스포티파이에서 앨범 커버를
+  //         자동으로 가져옵니다. 가져오기에 실패하거나 다른 이미지를
+  //         쓰고 싶을 때만 경로나 주소를 직접 적으면 됩니다.
   music: {
     heading: "발매한 앨범",
     description:
@@ -360,12 +362,12 @@ export const site = {
     // 스포티파이 아티스트 페이지 주소를 넣으면 '전체 앨범 보기' 버튼이 표시됩니다.
     artistUrl: "https://open.spotify.com/artist/2w9UTjpzUn0fdVXxQKI4Uh",
     albums: [
-      { id: "0DRJkPikkPg0kD8Filafni", title: "그 계절의 끝에서" },
-      { id: "7Gs2VT3PwKTcmqHbG5SSUz", title: "Midnight Summer" },
-      { id: "2sDqPRdDouf4e3QkJCdASu", title: "인생 한잔" },
-      { id: "13N3QYzoyCxmpwlOStwqXc", title: "Neon Velvet" },
-      { id: "5ZQCHa4MHNXI9PiTCqzoJD", title: "PINKY RUNWAY" },
-      { id: "2SnsQLVwTMJ44vFlgKrPHF", title: "PINKY KITCHEN" },
+      { id: "0DRJkPikkPg0kD8Filafni", title: "그 계절의 끝에서", cover: "" },
+      { id: "7Gs2VT3PwKTcmqHbG5SSUz", title: "Midnight Summer", cover: "" },
+      { id: "2sDqPRdDouf4e3QkJCdASu", title: "인생 한잔", cover: "" },
+      { id: "13N3QYzoyCxmpwlOStwqXc", title: "Neon Velvet", cover: "" },
+      { id: "5ZQCHa4MHNXI9PiTCqzoJD", title: "PINKY RUNWAY", cover: "" },
+      { id: "2SnsQLVwTMJ44vFlgKrPHF", title: "PINKY KITCHEN", cover: "" },
     ],
   },
 
