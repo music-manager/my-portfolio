@@ -155,7 +155,68 @@ export const site = {
     },
   ],
 
-  // ---------- 4. Music (Spotify 앨범) ----------
+  // ---------- 4. Services (의뢰 가능한 유료 서비스) ----------
+  // accent: "naver" | "kmong" | "neutral" — 플랫폼 배지 색상
+  // price / points / proofHref 는 비워 두면 해당 요소가 표시되지 않습니다.
+  services: {
+    heading: "의뢰할 수 있는 서비스",
+    description:
+      "크몽에서 'AI콘텐츠마케팅랩' 으로, 네이버 엑스퍼트에서 '지출추적자' 로 활동하고 있습니다. 아래 서비스는 각 플랫폼에서 바로 의뢰·결제할 수 있습니다.",
+    items: [
+      {
+        platform: "크몽",
+        accent: "kmong" as const,
+        title: "기업 홈페이지 · 랜딩페이지 제작",
+        description:
+          "방문자가 회사를 빠르게 이해하고 문의까지 이어지도록 반응형 기업 홈페이지와 랜딩페이지를 기획·개발합니다.",
+        points: [
+          "PC·모바일 반응형 제작",
+          "문의·상담 폼 및 화면 인터랙션 구현",
+          "회사소개서·브로슈어 기반 웹사이트 재구성",
+          "웹 배포 지원",
+        ],
+        price: "",
+        href: "https://kmong.com/gig/815010",
+        cta: "크몽에서 보기",
+        proofLabel: "",
+        proofHref: "",
+      },
+      {
+        platform: "크몽",
+        accent: "kmong" as const,
+        title: "AI 제품 광고 이미지 제작",
+        description:
+          "제품 사진을 기반으로 미드저니를 활용해 광고·홍보용 연출 이미지를 제작합니다.",
+        points: [
+          "쇼핑몰·스마트스토어·SNS·배너 광고 맞춤 제작",
+          "STANDARD · 3장 · 29,000원",
+          "DELUXE · 6장 · 59,000원",
+          "PREMIUM · 10장 · 99,000원",
+        ],
+        price: "29,000원부터",
+        href: "https://kmong.com/gig/814481",
+        cta: "크몽에서 보기",
+        proofLabel: "",
+        proofHref: "",
+      },
+      {
+        platform: "네이버 엑스퍼트",
+        accent: "naver" as const,
+        title: "1:1 지출 관리 상담",
+        description:
+          "지출 관리와 절약 전략을 개인 상황에 맞춰 상담해 드립니다. 네이버 엑스퍼트에서 바로 신청할 수 있습니다.",
+        points: [],
+        price: "",
+        href: "https://m.expert.naver.com/mobile/expert/product/detail?storeId=100060593&productId=100186801",
+        cta: "상담 신청하기",
+        proofLabel: "지식iN 활동 내역 보기",
+        proofHref:
+          "https://kin.naver.com/profile/index.naver?u=7aLa%2FWjmjZFtTWX1Yr4v56TwQ%2BvSNP3v6Ue0A26%2FkaM%3D",
+      },
+    ],
+  },
+
+  // ---------- 5. Music (Spotify 앨범) ----------
   // 앨범을 추가하려면 아래 배열에 한 줄만 넣으면 됩니다.
   // id = 스포티파이 앨범 링크에서 /album/ 뒤에 오는 문자열
   //   예) https://open.spotify.com/album/2sDqPRdDouf4e3QkJCdASu
@@ -179,26 +240,12 @@ export const site = {
     ],
   },
 
-  // ---------- 5. Contact / Social ----------
+  // ---------- 6. Contact / Social ----------
   contact: {
     heading: "함께 만들 이야기가 있다면",
     description:
       "협업, 외주, 자동화 시스템 구축 문의 모두 환영합니다. 메일로 연락 주시면 빠르게 답장드립니다.",
     email: "your@email.com",
-
-    // 네이버 엑스퍼트 유료 상담 — 비워 두면("") 상담 카드가 표시되지 않습니다.
-    consult: {
-      badge: "네이버 엑스퍼트",
-      title: "1:1 유료 상담 신청하기",
-      description:
-        "지출 관리와 절약 전략을 개인 상황에 맞춰 상담해 드립니다. 네이버 엑스퍼트에서 바로 신청할 수 있습니다.",
-      href: "https://m.expert.naver.com/mobile/expert/product/detail?storeId=100060593&productId=100186801",
-      cta: "상담 상품 보기",
-      // 지식iN 활동 내역 — 상담 신뢰도를 보여 주는 보조 링크입니다.
-      proofLabel: "지식iN 활동 내역 보기",
-      proofHref:
-        "https://kin.naver.com/profile/index.naver?u=7aLa%2FWjmjZFtTWX1Yr4v56TwQ%2BvSNP3v6Ue0A26%2FkaM%3D",
-    },
   },
 
   socials: [
@@ -217,6 +264,7 @@ export const site = {
   nav: [
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
+    { label: "Services", href: "#services" },
     { label: "Music", href: "#music" },
     { label: "Contact", href: "#contact" },
   ],
@@ -225,4 +273,5 @@ export const site = {
 export type Site = typeof site;
 export type Project = (typeof site.projects)[number];
 export type Album = (typeof site.music.albums)[number];
+export type Service = (typeof site.services.items)[number];
 export type SocialIcon = (typeof site.socials)[number]["icon"];

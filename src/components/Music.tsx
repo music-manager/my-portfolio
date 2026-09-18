@@ -13,7 +13,6 @@ export default function Music() {
       eyebrow="Music"
       title={music.heading}
       description={music.description}
-      className="bg-slate-50/70 dark:bg-slate-900/40"
     >
       {/* 스포티파이 공식 임베드 — 앨범명·커버·재생 버튼이 항상 최신 상태로 표시됩니다 */}
       <ul className="grid gap-4 sm:grid-cols-2">

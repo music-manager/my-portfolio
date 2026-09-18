@@ -29,7 +29,7 @@ npm run dev     # 2. 개발 서버 실행
 | 프로젝트 카드 (추가/삭제 자유) | `projects` |
 | 스포티파이 앨범 목록 | `music.albums` |
 | 이메일, 연락 문구 | `contact` |
-| 네이버 엑스퍼트 유료 상담 CTA | `contact.consult` (`href` 를 `""` 로 두면 숨겨짐) |
+| 의뢰 가능한 유료 서비스 (크몽·엑스퍼트) | `services.items` |
 | GitHub · 블로그 · 유튜브 링크 | `socials` |
 | 상단 메뉴 | `nav` |
 
@@ -37,6 +37,18 @@ npm run dev     # 2. 개발 서버 실행
 1. 사진 파일을 `public/profile.jpg` 로 복사
 2. `site.ts` 의 `hero.avatar` 를 `"/profile.jpg"` 로 변경
    (빈 값 `""` 이면 로고 심볼 마크 `public/mark.png` 가 아바타로 표시됩니다)
+
+### 서비스 추가하기
+
+`src/data/site.ts` 의 `services.items` 배열에 항목을 추가하면 카드가 늘어납니다.
+
+| 필드 | 설명 |
+| --- | --- |
+| `platform` | 배지에 표시할 플랫폼 이름 (예: `"크몽"`) |
+| `accent` | 배지 색상 — `"kmong"` / `"naver"` / `"neutral"` (`as const` 필수) |
+| `price` | 가격 배지. 빈 값이면 숨겨짐 |
+| `points` | 불릿 목록. 빈 배열이면 숨겨짐 |
+| `proofHref` | CTA 아래 보조 링크. 빈 값이면 숨겨짐 |
 
 ### 앨범 추가하기 (1줄이면 끝)
 
@@ -100,8 +112,9 @@ my-portfolio/
 │  │  ├─ Hero.tsx           # 1. 메인 히어로 (한 줄 소개 + 프로필)
 │  │  ├─ About.tsx          # 2. About Me (기술 · 관심사 · 경력)
 │  │  ├─ Projects.tsx       # 3. Projects (사이트 카드 링크)
-│  │  ├─ Music.tsx          # 4. Music (스포티파이 앨범 플레이어)
-│  │  ├─ Contact.tsx        # 5. Contact / Social
+│  │  ├─ Services.tsx       # 4. Services (의뢰 가능한 유료 서비스)
+│  │  ├─ Music.tsx          # 5. Music (스포티파이 앨범 플레이어)
+│  │  ├─ Contact.tsx        # 6. Contact / Social
 │  │  ├─ Footer.tsx
 │  │  ├─ Section.tsx        # 섹션 공통 래퍼 (제목 스타일 통일)
 │  │  ├─ ThemeToggle.tsx    # 다크모드 토글

@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Music from "@/components/Music";
 import Projects from "@/components/Projects";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
+        <Services />
         <Music />
         <Contact />
       </main>

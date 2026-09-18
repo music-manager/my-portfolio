@@ -24,6 +24,9 @@
   /* 네이버 브랜드 그린 — 엑스퍼트 상담 CTA 전용 */
   --color-naver: #03c75a;
 
+  /* 크몽 서비스 배지용 액센트 */
+  --color-kmong: #ffbe00;
+
   --animate-fade-up: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 
   @keyframes fade-up {
