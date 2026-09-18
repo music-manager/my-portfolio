@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     description: site.metaDescription,
   },
   robots: { index: true, follow: true },
+  // 구글 / 네이버 소유권 확인용 meta 태그.
+  // site.ts 의 verification 값이 비어 있으면 태그를 출력하지 않습니다.
+  verification: {
+    ...(site.verification.google ? { google: site.verification.google } : {}),
+    ...(site.verification.naver
+      ? { other: { "naver-site-verification": site.verification.naver } }
+      : {}),
+  },
 };
 
 export const viewport: Viewport = {
