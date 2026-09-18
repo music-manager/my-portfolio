@@ -3,7 +3,7 @@
 // (이미지, 이름, 링크, 프로젝트 카드 전부 여기서 관리)
 // ============================================================
 
-import type { ServiceAccent } from "./types";
+import type { ServiceAccent, StatAccent } from "./types";
 
 export const site = {
   // ---------- 기본 정보 (SEO / 브라우저 탭) ----------
@@ -18,21 +18,33 @@ export const site = {
   // 로고 이미지는 /public 에 있습니다. 교체하려면 같은 이름으로 덮어쓰고
   // width/height(원본 픽셀 크기)만 맞춰 주세요.
   logo: {
-    // 헤더 워드마크 — 배경색에 따라 자동으로 바뀝니다
-    wordmarkLight: "/wordmark-light.png", // 밝은 배경용 (검은 글자)
-    wordmarkDark: "/wordmark-dark.png", // 어두운 배경용 (흰 글자)
+    // 헤더 워드마크 이미지. 비워 두면 사이트 이름이 텍스트로 표시됩니다.
+    wordmarkLight: "",
+    wordmarkDark: "",
     width: 593,
     height: 96,
-    // 원형 심볼 마크 — 프로필 사진이 없을 때 아바타로 사용
-    mark: "/mark.png",
+    // 헤더 이름 아래에 붙는 한 줄
+    tagline: "MUSIC & AI CREATOR",
+    // 원형 엠블럼 — 히어로 아바타와 파비콘에 사용
+    mark: "/emblem.png",
   },
+
+  // 헤더 오른쪽 버튼
+  headerCta: { label: "함께 만드는 더 좋은 하루", href: "#contact" },
 
   // ---------- 1. 히어로 섹션 ----------
   hero: {
-    badge: "지금 새로운 협업을 찾고 있습니다",
-    headline: "AI로 콘텐츠를 자동으로 만들고, 유통하고, 수익화합니다.",
+    badge: "AI × MUSIC × CONTENT",
+    // headline 은 검은 글자, headlineAccent 는 골드 그라데이션으로 표시됩니다
+    headline: "AI로 콘텐츠를 자동으로 만들고,",
+    headlineAccent: "유통하고, 수익화합니다.",
     tagline:
       "유튜브 쇼츠·AI 음악·블로그까지, 기획부터 발행까지 전 과정을 자동화하는 시스템을 만듭니다.",
+    // 로고 옆에 손글씨처럼 들어가는 문구 (줄바꿈은 배열로)
+    quote: ["좋은 콘텐츠가", "좋은 사람들을", "더 가깝게 만듭니다."],
+    // 히어로 좌·우 하단의 작은 영문 문구
+    cornerLeft: ["CREATIVE TODAY", "A BRIGHTER TOMORROW"],
+    cornerRight: ["AI MAKES", "IDEAS REAL"],
     // /public 폴더에 사진을 넣고 "/profile.jpg" 처럼 적으면 사진이 표시됩니다.
     // 빈 값("")이면 로고 심볼 마크(logo.mark)가 대신 표시됩니다.
     avatar: "",
@@ -42,6 +54,18 @@ export const site = {
 
   // ---------- 2. About Me ----------
   about: {
+    // 소개 제목 — accent 는 골드 그라데이션으로 표시됩니다
+    heading: "아이디어를 현실로 만드는",
+    headingAccent: "AI 콘텐츠 크리에이터, CHANGHO",
+
+    // 숫자 카드. accent: "sunrise" | "sky" | "rose"
+    // ⚠️ 아래 수치는 시안 기준 예시입니다. 실제 값으로 바꿔 주세요.
+    stats: [
+      { value: "200만+", label: "제작 콘텐츠", accent: "sunrise" as StatAccent },
+      { value: "10+", label: "운영 채널", accent: "sky" as StatAccent },
+      { value: "계속", label: "더 좋은 콘텐츠", accent: "rose" as StatAccent },
+    ],
+
     paragraphs: [
       "AI 도구를 조합해 콘텐츠 제작 파이프라인을 만드는 일을 합니다. 기획·대본·영상·자막·썸네일까지 사람이 손대는 단계를 최소화하는 구조를 설계합니다.",
       "제작한 콘텐츠는 유튜브와 스트리밍 플랫폼, 블로그로 동시에 유통하며, 각 채널의 데이터를 보고 다음 콘텐츠를 자동으로 기획하는 루프를 운영합니다.",
@@ -348,16 +372,16 @@ export const site = {
   },
 
   socials: [
-    { label: "Email", href: "mailto:ktntopia@gmail.com", icon: "mail" },
-    { label: "GitHub", href: "https://github.com/lifetools-dev", icon: "github" },
-    { label: "네이버 블로그", href: "https://blog.naver.com/ktntopia", icon: "naver" },
-    { label: "티스토리", href: "https://ktntopia.tistory.com", icon: "blog" },
     { label: "YouTube", href: "https://www.youtube.com/@changhomusic", icon: "youtube" },
     {
       label: "Spotify",
       href: "https://open.spotify.com/artist/2w9UTjpzUn0fdVXxQKI4Uh",
       icon: "spotify",
     },
+    { label: "네이버 블로그", href: "https://blog.naver.com/ktntopia", icon: "naver" },
+    { label: "티스토리", href: "https://ktntopia.tistory.com", icon: "blog" },
+    { label: "GitHub", href: "https://github.com/lifetools-dev", icon: "github" },
+    { label: "Email", href: "mailto:ktntopia@gmail.com", icon: "mail" },
   ] as const,
 
   // ---------- 네비게이션 ----------
@@ -378,4 +402,5 @@ export type Album = (typeof site.music.albums)[number];
 export type Service = (typeof site.services.items)[number];
 export type Channel = (typeof site.channels.items)[number];
 export type PortfolioItem = (typeof site.portfolio.items)[number];
+export type Stat = (typeof site.about.stats)[number];
 export type SocialIcon = (typeof site.socials)[number]["icon"];

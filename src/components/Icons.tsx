@@ -62,6 +62,31 @@ export function SpotifyIcon(props: IconProps) {
   );
 }
 
+export function PlayIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M8 5.6v12.8L19 12 8 5.6Z" />
+    </svg>
+  );
+}
+
+export function ChartIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M4 19.5h16" />
+      <path d="M7 16.5v-5M12 16.5v-9M17 16.5v-3" />
+    </svg>
+  );
+}
+
+export function HeartIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 19.6s-6.7-4.1-8.3-7.7C2.3 9.2 3.8 6 6.9 6c1.9 0 3.3 1.1 4.1 2.3l1 1.4 1-1.4C13.8 7.1 15.2 6 17.1 6c3.1 0 4.6 3.2 3.2 5.9-1.6 3.6-8.3 7.7-8.3 7.7Z" />
+    </svg>
+  );
+}
+
 export function ArrowUpRightIcon(props: IconProps) {
   return (
     <svg {...base} {...props}>

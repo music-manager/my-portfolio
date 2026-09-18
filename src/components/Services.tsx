@@ -24,7 +24,7 @@ export default function Services() {
         {services.items.map((service) => (
           <li
             key={service.href}
-            className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900/60"
+            className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/10 dark:border-white/10 dark:bg-white/5"
           >
             <div className="flex flex-wrap items-center gap-2">
               <span
@@ -36,7 +36,7 @@ export default function Services() {
                 {service.platform}
               </span>
               {service.price ? (
-                <span className="rounded-full border border-slate-200 px-2.5 py-1 text-[11px] font-semibold text-slate-600 dark:border-slate-700 dark:text-slate-400">
+                <span className="rounded-full border border-brand-300 bg-brand-50 px-2.5 py-1 text-[11px] font-semibold text-brand-800 dark:border-brand-500/40 dark:bg-brand-500/10 dark:text-brand-300">
                   {service.price}
                 </span>
               ) : null}
@@ -56,7 +56,7 @@ export default function Services() {
                     key={point}
                     className="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-400"
                   >
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-slate-300 dark:bg-slate-600" />
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-gradient-to-br from-sunrise to-brand-500" />
                     {point}
                   </li>
                 ))}

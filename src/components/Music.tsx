@@ -19,7 +19,7 @@ export default function Music() {
         {music.albums.map((album) => (
           <li
             key={album.id}
-            className="overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-900"
+            className="overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-900/5 dark:bg-white/5 dark:ring-white/10"
           >
             <iframe
               src={`https://open.spotify.com/embed/album/${album.id}?utm_source=generator`}

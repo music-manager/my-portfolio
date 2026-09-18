@@ -2,3 +2,6 @@
 
 /** Services 카드의 플랫폼 배지 색상 */
 export type ServiceAccent = "naver" | "kmong" | "neutral";
+
+/** About 숫자 카드의 강조 색상 */
+export type StatAccent = "sunrise" | "sky" | "rose";
