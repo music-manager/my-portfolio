@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/data/site";
 import { ArrowUpRightIcon, YoutubeIcon } from "./Icons";
 import Section from "./Section";
@@ -35,12 +36,24 @@ export default function Channels() {
               className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-500/40"
             >
               <div className="flex items-center gap-3">
-                <span
-                  className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-50 to-orange-50 text-xl ring-1 ring-brand-200/60 dark:from-white/10 dark:to-white/5 dark:ring-white/10"
-                  aria-hidden
-                >
-                  {channel.emoji}
-                </span>
+                {/* 프로필 사진이 있으면 사진을, 없으면 이모지를 보여 줍니다 */}
+                {channel.avatar ? (
+                  <Image
+                    src={channel.avatar}
+                    alt=""
+                    width={44}
+                    height={44}
+                    className="size-11 shrink-0 rounded-full object-cover ring-1 ring-brand-200/60 dark:ring-white/10"
+                    aria-hidden
+                  />
+                ) : (
+                  <span
+                    className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-50 to-orange-50 text-xl ring-1 ring-brand-200/60 dark:from-white/10 dark:to-white/5 dark:ring-white/10"
+                    aria-hidden
+                  >
+                    {channel.emoji}
+                  </span>
+                )}
                 <div className="min-w-0 flex-1">
                   <h3 className="flex items-center gap-1 text-base font-semibold text-slate-900 dark:text-white">
                     <span className="truncate">{channel.name}</span>

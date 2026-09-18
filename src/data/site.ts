@@ -140,6 +140,8 @@ export const site = {
     heading: "운영 중인 유튜브 채널",
     description:
       "주제별로 채널을 나눠 운영합니다. 기획부터 대본·영상·자막·업로드까지 자동화 파이프라인으로 제작합니다.",
+    // avatar: public/channels 안의 정사각형 프로필 사진 경로입니다.
+    // 비워 두면 emoji 값이 대신 표시됩니다.
     items: [
       {
         name: "동물쉐프",
@@ -147,6 +149,7 @@ export const site = {
         url: "https://www.youtube.com/@dongmulchef",
         tag: "요리",
         emoji: "🍳",
+        avatar: "/channels/dongmulchef.jpg",
         description:
           "강아지를 위한 음식을 만들고 먹는 과정을 담은 요리·먹방 쇼츠 채널입니다.",
       },
@@ -156,6 +159,7 @@ export const site = {
         url: "https://www.youtube.com/@핑키미용실",
         tag: "미용",
         emoji: "✂️",
+        avatar: "/channels/pinky-salon.jpg",
         description:
           "강아지 미용 전후 변신 과정을 보여 주는 Before/After 중심 쇼츠 채널입니다.",
       },
@@ -165,6 +169,7 @@ export const site = {
         url: "https://www.youtube.com/@핑키감동극장",
         tag: "감동",
         emoji: "🐶",
+        avatar: "/channels/pinky-theater.jpg",
         description:
           "토이푸들 핑키가 위기에 빠진 동물을 구조하는 감동 스토리 쇼츠를 매일 발행합니다.",
       },
@@ -174,6 +179,7 @@ export const site = {
         url: "https://www.youtube.com/@changhomusic",
         tag: "음악",
         emoji: "🎼",
+        avatar: "/channels/changho.jpg",
         description:
           "직접 제작한 AI 음악을 공개하는 메인 음악 채널입니다. 스트리밍 플랫폼 발매곡과 연결됩니다.",
       },
@@ -183,6 +189,7 @@ export const site = {
         url: "https://www.youtube.com/@eliramusic",
         tag: "음악",
         emoji: "🎧",
+        avatar: "/channels/elira.jpg",
         description:
           "별도 콘셉트로 운영하는 세컨드 음악 채널입니다. 장르와 분위기를 나눠 청취층을 넓힙니다.",
       },
@@ -192,6 +199,7 @@ export const site = {
         url: "https://www.youtube.com/@gooditemhub",
         tag: "쇼핑",
         emoji: "🛍️",
+        avatar: "",
         description:
           "생활에 도움이 되는 제품을 소개하는 쇼핑 큐레이션 채널입니다. 제휴 링크로 수익화합니다.",
       },

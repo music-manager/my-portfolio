@@ -125,6 +125,8 @@ export const site = {
     heading: "운영 중인 유튜브 채널",
     description:
       "주제별로 채널을 나눠 운영합니다. 기획부터 업로드까지 직접 진행합니다.",
+    // avatar: public/channels 안의 정사각형 프로필 사진 경로입니다.
+    // 비워 두면 emoji 값이 대신 표시됩니다.
     items: [
       {
         name: "채널 이름 1",
@@ -132,6 +134,7 @@ export const site = {
         url: "https://www.youtube.com/@yourchannel1",
         tag: "정보",
         emoji: "📺",
+        avatar: "",
         description:
           "채널을 한 줄로 소개하는 자리입니다. 어떤 시청자에게 무엇을 주는 채널인지 적어 주세요.",
       },
@@ -141,6 +144,7 @@ export const site = {
         url: "https://www.youtube.com/@yourchannel2",
         tag: "리뷰",
         emoji: "🎬",
+        avatar: "",
         description:
           "두 번째 채널 소개입니다. 첫 번째 채널과 어떻게 다른지 적으면 좋습니다.",
       },
@@ -150,6 +154,7 @@ export const site = {
         url: "https://www.youtube.com/@yourchannel3",
         tag: "쇼핑",
         emoji: "🛍️",
+        avatar: "",
         description:
           "세 번째 채널 소개입니다. 수익화 방식을 함께 적어 두면 신뢰가 올라갑니다.",
       },
