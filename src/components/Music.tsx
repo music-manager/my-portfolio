@@ -1,4 +1,5 @@
 import { site } from "@/data/site";
+import AlbumPlayer from "./AlbumPlayer";
 import { ArrowUpRightIcon } from "./Icons";
 import Section from "./Section";
 
@@ -14,22 +15,14 @@ export default function Music() {
       title={music.heading}
       description={music.description}
     >
-      {/* 스포티파이 공식 임베드 — 앨범명·커버·재생 버튼이 항상 최신 상태로 표시됩니다 */}
+      {/* 누른 뒤에 플레이어를 불러옵니다 (AlbumPlayer 주석 참고) */}
       <ul className="grid gap-4 sm:grid-cols-2">
         {music.albums.map((album) => (
           <li
             key={album.id}
             className="overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-900/5 dark:bg-white/5 dark:ring-white/10"
           >
-            <iframe
-              src={`https://open.spotify.com/embed/album/${album.id}?utm_source=generator`}
-              title={`${album.title} — Spotify 플레이어`}
-              width="100%"
-              height={152}
-              loading="lazy"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              className="block w-full border-0"
-            />
+            <AlbumPlayer id={album.id} title={album.title} />
           </li>
         ))}
       </ul>
