@@ -3,6 +3,8 @@
 // (이미지, 이름, 링크, 프로젝트 카드 전부 여기서 관리)
 // ============================================================
 
+import type { ServiceAccent } from "./types";
+
 export const site = {
   // ---------- 기본 정보 (SEO / 브라우저 탭) ----------
   name: "CHANGHO",
@@ -211,7 +213,7 @@ export const site = {
     items: [
       {
         platform: "크몽",
-        accent: "kmong" as const,
+        accent: "kmong" as ServiceAccent,
         title: "기업 홈페이지 · 랜딩페이지 제작",
         description:
           "방문자가 회사를 빠르게 이해하고 문의까지 이어지도록 반응형 기업 홈페이지와 랜딩페이지를 기획·개발합니다.",
@@ -229,7 +231,7 @@ export const site = {
       },
       {
         platform: "크몽",
-        accent: "kmong" as const,
+        accent: "kmong" as ServiceAccent,
         title: "AI 제품 광고 이미지 제작",
         description:
           "제품 사진을 기반으로 미드저니를 활용해 광고·홍보용 연출 이미지를 제작합니다.",
@@ -247,7 +249,7 @@ export const site = {
       },
       {
         platform: "네이버 엑스퍼트",
-        accent: "naver" as const,
+        accent: "naver" as ServiceAccent,
         title: "1:1 지출 관리 상담",
         description:
           "지출 관리와 절약 전략을 개인 상황에 맞춰 상담해 드립니다. 네이버 엑스퍼트에서 바로 신청할 수 있습니다.",

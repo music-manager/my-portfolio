@@ -3,6 +3,8 @@ import { ArrowUpRightIcon } from "./Icons";
 import Section from "./Section";
 
 export default function Projects() {
+  if (site.projects.length === 0) return null;
+
   return (
     <Section
       id="projects"

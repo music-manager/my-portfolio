@@ -26,22 +26,32 @@ export default function Header() {
     >
       <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-5 sm:px-8">
         <a href="#top" aria-label={`${site.name} 홈`} className="shrink-0">
-          <Image
-            src={site.logo.wordmarkLight}
-            alt={site.name}
-            width={site.logo.width}
-            height={site.logo.height}
-            priority
-            className="h-[18px] w-auto dark:hidden"
-          />
-          <Image
-            src={site.logo.wordmarkDark}
-            alt={site.name}
-            width={site.logo.width}
-            height={site.logo.height}
-            priority
-            className="hidden h-[18px] w-auto dark:block"
-          />
+          {site.logo.wordmarkLight && site.logo.wordmarkDark ? (
+            <>
+              <Image
+                src={site.logo.wordmarkLight}
+                alt={site.name}
+                width={site.logo.width}
+                height={site.logo.height}
+                priority
+                className="h-[18px] w-auto dark:hidden"
+              />
+              <Image
+                src={site.logo.wordmarkDark}
+                alt={site.name}
+                width={site.logo.width}
+                height={site.logo.height}
+                priority
+                className="hidden h-[18px] w-auto dark:block"
+              />
+            </>
+          ) : (
+            // 로고 이미지가 없으면 사이트 이름을 워드마크 대신 표시합니다
+            <span className="text-base font-bold tracking-tight text-slate-900 dark:text-white">
+              {site.name}
+              <span className="text-brand-500">.</span>
+            </span>
+          )}
         </a>
 
         <nav className="hidden items-center gap-1 lg:flex">

@@ -4,6 +4,7 @@ import { ArrowUpRightIcon, socialIcons } from "./Icons";
 
 export default function Hero() {
   const { hero } = site;
+  const avatarSrc = hero.avatar || site.logo.mark;
 
   return (
     <section
@@ -76,16 +77,25 @@ export default function Hero() {
               className="absolute -inset-2 rounded-full bg-gradient-to-tr from-brand-400/40 to-brand-200/10 blur-xl"
             />
             <div className="relative size-full overflow-hidden rounded-full border-4 border-white bg-slate-950 shadow-xl dark:border-slate-800">
-              <Image
-                src={hero.avatar || site.logo.mark}
-                alt={
-                  hero.avatar ? `${site.name} 프로필 사진` : `${site.name} 로고`
-                }
-                fill
-                priority
-                sizes="(min-width: 768px) 13rem, 9rem"
-                className="object-cover"
-              />
+              {avatarSrc ? (
+                <Image
+                  src={avatarSrc}
+                  alt={
+                    hero.avatar
+                      ? `${site.name} 프로필 사진`
+                      : `${site.name} 로고`
+                  }
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 13rem, 9rem"
+                  className="object-cover"
+                />
+              ) : (
+                // 사진도 로고도 없으면 이름 첫 글자를 보여 줍니다
+                <span className="flex size-full items-center justify-center text-4xl font-bold text-white">
+                  {site.name.slice(0, 1)}
+                </span>
+              )}
             </div>
           </div>
           <p className="mt-5 text-sm font-semibold text-slate-900 dark:text-white">

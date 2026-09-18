@@ -16,7 +16,32 @@ npm run dev     # 2. 개발 서버 실행
 
 ---
 
-## 2. 내용 수정하기 — `src/data/site.ts` 하나만 고치면 됩니다
+## 2. 새 사이트로 재사용하기 (템플릿 모드)
+
+이 프로젝트를 다른 사이트의 출발점으로 쓰려면 더미 데이터 파일을 덮어쓰면 됩니다.
+
+```bash
+cp src/data/site.example.ts src/data/site.ts
+npm run dev
+```
+
+`site.example.ts` 는 실제 정보가 하나도 없는 예시 데이터입니다.
+로고·프로필 사진·앨범이 비어 있어도 화면이 깨지지 않습니다.
+
+| 비어 있을 때 | 화면 동작 |
+| --- | --- |
+| `logo.wordmark*` | 헤더에 사이트 이름이 텍스트로 표시 |
+| `hero.avatar` + `logo.mark` | 아바타 자리에 이름 첫 글자 표시 |
+| `channels.items` / `projects` / `services.items` / `portfolio.items` / `music.albums` | 해당 섹션 전체가 자동으로 숨겨짐 |
+
+> 섹션이 숨겨지면 `nav` 에서도 그 항목을 빼 주세요. 앵커가 빈 곳을 가리키게 됩니다.
+
+`site.ts` 에 항목을 추가했다면 `site.example.ts` 에도 같은 항목을 추가해
+두 파일의 구조를 맞춰 주세요.
+
+---
+
+## 3. 내용 수정하기 — `src/data/site.ts` 하나만 고치면 됩니다
 
 이름, 소개글, 기술스택, 경력, 프로젝트 카드, 이메일, SNS 링크가 **전부 이 파일 한 곳**에 있습니다.
 컴포넌트 코드는 건드릴 필요가 없습니다.
@@ -94,7 +119,7 @@ https://open.spotify.com/album/2sDqPRdDouf4e3QkJCdASu?si=...
 
 ---
 
-## 3. 폴더 구조
+## 4. 폴더 구조
 
 ```
 my-portfolio/
@@ -132,7 +157,7 @@ my-portfolio/
 
 ---
 
-## 4. 명령어
+## 5. 명령어
 
 | 명령어 | 설명 |
 | --- | --- |
@@ -143,7 +168,7 @@ my-portfolio/
 
 ---
 
-## 5. 배포하기 (Vercel · 무료)
+## 6. 배포하기 (Vercel · 무료)
 
 1. 이 저장소를 GitHub에 push
 2. https://vercel.com 접속 → GitHub 계정으로 로그인
@@ -154,7 +179,7 @@ my-portfolio/
 
 ---
 
-## 6. 포함된 기능
+## 7. 포함된 기능
 
 - ✅ 모바일 / 태블릿 / PC 반응형 레이아웃
 - ✅ 다크모드 (시스템 설정 자동 감지 + 수동 토글, 새로고침 시 깜빡임 없음)
