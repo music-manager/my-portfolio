@@ -79,7 +79,9 @@ export default function Services() {
               {service.proofHref ? (
                 <a
                   href={service.proofHref}
-                  target="_blank"
+                  target={
+                    service.proofHref.startsWith("http") ? "_blank" : undefined
+                  }
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-1.5 text-xs font-medium text-slate-500 underline underline-offset-4 transition hover:text-slate-900 dark:text-slate-500 dark:hover:text-white"
                 >

@@ -28,6 +28,7 @@ npm run dev     # 2. 개발 서버 실행
 | 소개글, 보유 기술, 경력, 관심사 | `about` |
 | 유튜브 채널 목록 | `channels.items` |
 | 운영 사이트·도구 카드 | `projects` |
+| 홈페이지 제작 실적 | `portfolio.items` |
 | 스포티파이 앨범 목록 | `music.albums` |
 | 이메일, 연락 문구 | `contact` |
 | 의뢰 가능한 유료 서비스 (크몽·엑스퍼트) | `services.items` |
@@ -115,8 +116,9 @@ my-portfolio/
 │  │  ├─ Channels.tsx       # 3. Channels (유튜브 채널)
 │  │  ├─ Projects.tsx       # 4. Projects (운영 사이트·도구)
 │  │  ├─ Services.tsx       # 5. Services (의뢰 가능한 유료 서비스)
-│  │  ├─ Music.tsx          # 6. Music (스포티파이 앨범 플레이어)
-│  │  ├─ Contact.tsx        # 7. Contact / Social
+│  │  ├─ Portfolio.tsx      # 6. Portfolio (홈페이지 제작 실적)
+│  │  ├─ Music.tsx          # 7. Music (스포티파이 앨범 플레이어)
+│  │  ├─ Contact.tsx        # 8. Contact / Social
 │  │  ├─ Footer.tsx
 │  │  ├─ Section.tsx        # 섹션 공통 래퍼 (제목 스타일 통일)
 │  │  ├─ ThemeToggle.tsx    # 다크모드 토글

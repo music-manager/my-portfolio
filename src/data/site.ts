@@ -224,8 +224,8 @@ export const site = {
         price: "",
         href: "https://kmong.com/gig/815010",
         cta: "크몽에서 보기",
-        proofLabel: "",
-        proofHref: "",
+        proofLabel: "제작 포트폴리오 보기",
+        proofHref: "#portfolio",
       },
       {
         platform: "크몽",
@@ -262,7 +262,50 @@ export const site = {
     ],
   },
 
-  // ---------- 6. Music (Spotify 앨범) ----------
+  // ---------- 6. Portfolio (홈페이지 제작 실적) ----------
+  // 의뢰받아 제작한 클라이언트 사이트입니다.
+  // Projects(직접 운영하는 사이트)와 구분됩니다.
+  portfolio: {
+    heading: "홈페이지 제작 포트폴리오",
+    description:
+      "의뢰를 받아 기획·제작한 사이트입니다. 모두 PC·모바일 반응형으로 제작했으며, 카드를 누르면 실제 사이트로 이동합니다.",
+    items: [
+      {
+        client: "케이하이로봇",
+        type: "B2B 랜딩페이지",
+        description:
+          "B2B 고객을 대상으로 한 반응형 랜딩페이지입니다. 핵심 메시지와 문의 동선을 한 화면에 담았습니다.",
+        href: "https://celebrated-bublanina-75cc79.netlify.app",
+        tags: ["B2B", "랜딩페이지", "반응형"],
+      },
+      {
+        client: "신경기로지스",
+        type: "기업 홈페이지",
+        description:
+          "물류 기업의 반응형 기업 홈페이지입니다. 회사 소개와 서비스 안내, 문의 동선을 구성했습니다.",
+        href: "https://singyeonggi.com/",
+        tags: ["물류", "기업 홈페이지", "반응형"],
+      },
+      {
+        client: "생활계산기 (esedy)",
+        type: "웹 플랫폼",
+        description:
+          "생활 속에서 자주 쓰는 계산을 한곳에서 처리할 수 있는 반응형 웹 플랫폼입니다.",
+        href: "https://esedy.com/",
+        tags: ["웹 플랫폼", "계산기", "반응형"],
+      },
+      {
+        client: "펫담다",
+        type: "종합 플랫폼",
+        description:
+          "반려동물 생애주기에 맞춘 케어와 장례 연계 서비스를 제공하는 종합 플랫폼입니다.",
+        href: "https://petdamda.com/",
+        tags: ["반려동물", "종합 플랫폼", "반응형"],
+      },
+    ],
+  },
+
+  // ---------- 7. Music (Spotify 앨범) ----------
   // 앨범을 추가하려면 아래 배열에 한 줄만 넣으면 됩니다.
   // id = 스포티파이 앨범 링크에서 /album/ 뒤에 오는 문자열
   //   예) https://open.spotify.com/album/2sDqPRdDouf4e3QkJCdASu
@@ -286,7 +329,7 @@ export const site = {
     ],
   },
 
-  // ---------- 7. Contact / Social ----------
+  // ---------- 8. Contact / Social ----------
   contact: {
     heading: "함께 만들 이야기가 있다면",
     description:
@@ -313,6 +356,7 @@ export const site = {
     { label: "Channels", href: "#channels" },
     { label: "Projects", href: "#projects" },
     { label: "Services", href: "#services" },
+    { label: "Portfolio", href: "#portfolio" },
     { label: "Music", href: "#music" },
     { label: "Contact", href: "#contact" },
   ],
@@ -323,4 +367,5 @@ export type Project = (typeof site.projects)[number];
 export type Album = (typeof site.music.albums)[number];
 export type Service = (typeof site.services.items)[number];
 export type Channel = (typeof site.channels.items)[number];
+export type PortfolioItem = (typeof site.portfolio.items)[number];
 export type SocialIcon = (typeof site.socials)[number]["icon"];
