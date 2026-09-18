@@ -31,10 +31,10 @@ export default function Channels() {
                   {channel.emoji}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <p className="flex items-center gap-1 text-base font-semibold text-slate-900 dark:text-white">
+                  <h3 className="flex items-center gap-1 text-base font-semibold text-slate-900 dark:text-white">
                     <span className="truncate">{channel.name}</span>
                     <ArrowUpRightIcon className="size-3.5 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-red-500" />
-                  </p>
+                  </h3>
                   <p className="truncate text-xs text-slate-500 dark:text-slate-500">
                     {channel.handle}
                   </p>

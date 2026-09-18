@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Analytics from "@/components/Analytics";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -53,6 +54,7 @@ export default function RootLayout({
           본문으로 건너뛰기
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
