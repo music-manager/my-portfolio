@@ -26,7 +26,8 @@ npm run dev     # 2. 개발 서버 실행
 | 이름 / 직함 / SEO 문구 | `name`, `role`, `metaTitle`, `metaDescription`, `siteUrl` |
 | 히어로 문구, 프로필 사진, 버튼 | `hero` |
 | 소개글, 보유 기술, 경력, 관심사 | `about` |
-| 프로젝트 카드 (추가/삭제 자유) | `projects` |
+| 유튜브 채널 목록 | `channels.items` |
+| 운영 사이트·도구 카드 | `projects` |
 | 스포티파이 앨범 목록 | `music.albums` |
 | 이메일, 연락 문구 | `contact` |
 | 의뢰 가능한 유료 서비스 (크몽·엑스퍼트) | `services.items` |
@@ -111,10 +112,11 @@ my-portfolio/
 │  │  ├─ Header.tsx         # 상단 고정 네비 + 모바일 햄버거 메뉴
 │  │  ├─ Hero.tsx           # 1. 메인 히어로 (한 줄 소개 + 프로필)
 │  │  ├─ About.tsx          # 2. About Me (기술 · 관심사 · 경력)
-│  │  ├─ Projects.tsx       # 3. Projects (사이트 카드 링크)
-│  │  ├─ Services.tsx       # 4. Services (의뢰 가능한 유료 서비스)
-│  │  ├─ Music.tsx          # 5. Music (스포티파이 앨범 플레이어)
-│  │  ├─ Contact.tsx        # 6. Contact / Social
+│  │  ├─ Channels.tsx       # 3. Channels (유튜브 채널)
+│  │  ├─ Projects.tsx       # 4. Projects (운영 사이트·도구)
+│  │  ├─ Services.tsx       # 5. Services (의뢰 가능한 유료 서비스)
+│  │  ├─ Music.tsx          # 6. Music (스포티파이 앨범 플레이어)
+│  │  ├─ Contact.tsx        # 7. Contact / Social
 │  │  ├─ Footer.tsx
 │  │  ├─ Section.tsx        # 섹션 공통 래퍼 (제목 스타일 통일)
 │  │  ├─ ThemeToggle.tsx    # 다크모드 토글

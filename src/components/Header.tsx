@@ -44,7 +44,7 @@ export default function Header() {
           />
         </a>
 
-        <nav className="hidden items-center gap-1 sm:flex">
+        <nav className="hidden items-center gap-1 md:flex">
           {site.nav.map((item) => (
             <a
               key={item.href}
@@ -64,7 +64,7 @@ export default function Header() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label="메뉴 열기"
-            className="inline-flex size-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-brand-300 hover:text-brand-600 sm:hidden dark:border-slate-800 dark:text-slate-400"
+            className="inline-flex size-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-brand-300 hover:text-brand-600 md:hidden dark:border-slate-800 dark:text-slate-400"
           >
             <svg
               viewBox="0 0 24 24"
@@ -87,7 +87,7 @@ export default function Header() {
       {open ? (
         <nav
           id="mobile-nav"
-          className="border-t border-slate-200 bg-white px-5 py-3 sm:hidden dark:border-slate-800 dark:bg-slate-950"
+          className="border-t border-slate-200 bg-white px-5 py-3 md:hidden dark:border-slate-800 dark:bg-slate-950"
         >
           {site.nav.map((item) => (
             <a

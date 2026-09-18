@@ -19,7 +19,6 @@ export default function Services() {
       eyebrow="Services"
       title={services.heading}
       description={services.description}
-      className="bg-slate-50/70 dark:bg-slate-900/40"
     >
       <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {services.items.map((service) => (

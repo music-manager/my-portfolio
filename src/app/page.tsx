@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Channels from "@/components/Channels";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -14,6 +15,7 @@ export default function Home() {
       <main id="main">
         <Hero />
         <About />
+        <Channels />
         <Projects />
         <Services />
         <Music />

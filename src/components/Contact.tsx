@@ -11,9 +11,8 @@ export default function Contact() {
       eyebrow="Contact"
       title={contact.heading}
       description={contact.description}
-      className="bg-slate-50/70 dark:bg-slate-900/40"
     >
-      <div className="rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 dark:border-slate-800 dark:bg-slate-900/60">
+      <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-8 sm:p-10 dark:border-slate-800 dark:bg-slate-900/60">
         <p className="text-sm font-medium text-slate-500 dark:text-slate-500">
           이메일로 연락하기
         </p>

@@ -7,8 +7,9 @@ export default function Projects() {
     <Section
       id="projects"
       eyebrow="Projects"
-      title="운영 중인 사이트와 프로젝트"
-      description="직접 기획하고 운영하는 채널과 서비스입니다. 카드를 누르면 해당 사이트로 이동합니다."
+      title="운영 중인 사이트와 도구"
+      description="직접 기획하고 운영하는 사이트와 내부 제작 도구입니다. 카드를 누르면 해당 사이트로 이동합니다."
+      className="bg-slate-50/70 dark:bg-slate-900/40"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         {site.projects.map((project) => (

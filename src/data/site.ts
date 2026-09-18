@@ -34,7 +34,7 @@ export const site = {
     // /public 폴더에 사진을 넣고 "/profile.jpg" 처럼 적으면 사진이 표시됩니다.
     // 빈 값("")이면 로고 심볼 마크(logo.mark)가 대신 표시됩니다.
     avatar: "",
-    primaryCta: { label: "프로젝트 보기", href: "#projects" },
+    primaryCta: { label: "채널 보기", href: "#channels" },
     secondaryCta: { label: "연락하기", href: "#contact" },
   },
 
@@ -96,27 +96,73 @@ export const site = {
     ],
   },
 
-  // ---------- 3. Projects ----------
+  // ---------- 3. Channels (유튜브 채널) ----------
+  // 채널을 추가하려면 아래 배열에 한 줄 추가하면 됩니다.
+  channels: {
+    heading: "운영 중인 유튜브 채널",
+    description:
+      "주제별로 채널을 나눠 운영합니다. 기획부터 대본·영상·자막·업로드까지 자동화 파이프라인으로 제작합니다.",
+    items: [
+      {
+        name: "창호",
+        handle: "@changhomusic",
+        url: "https://www.youtube.com/@changhomusic",
+        tag: "음악",
+        emoji: "🎼",
+        description:
+          "직접 제작한 AI 음악을 공개하는 메인 음악 채널입니다. 스트리밍 플랫폼 발매곡과 연결됩니다.",
+      },
+      {
+        name: "ELIRA",
+        handle: "@eliramusic",
+        url: "https://www.youtube.com/@eliramusic",
+        tag: "음악",
+        emoji: "🎧",
+        description:
+          "별도 콘셉트로 운영하는 세컨드 음악 채널입니다. 장르와 분위기를 나눠 청취층을 넓힙니다.",
+      },
+      {
+        name: "핑키 감동극장",
+        handle: "@핑키감동극장",
+        url: "https://www.youtube.com/@핑키감동극장",
+        tag: "감동",
+        emoji: "🐶",
+        description:
+          "토이푸들 핑키가 위기에 빠진 동물을 구조하는 감동 스토리 쇼츠를 매일 발행합니다.",
+      },
+      {
+        name: "동물쉐프",
+        handle: "@dongmulchef",
+        url: "https://www.youtube.com/@dongmulchef",
+        tag: "요리",
+        emoji: "🍳",
+        description:
+          "강아지를 위한 음식을 만들고 먹는 과정을 담은 요리·먹방 쇼츠 채널입니다.",
+      },
+      {
+        name: "핑키미용실",
+        handle: "@핑키미용실",
+        url: "https://www.youtube.com/@핑키미용실",
+        tag: "미용",
+        emoji: "✂️",
+        description:
+          "강아지 미용 전후 변신 과정을 보여 주는 Before/After 중심 쇼츠 채널입니다.",
+      },
+      {
+        name: "꿀템모음",
+        handle: "@gooditemhub",
+        url: "https://www.youtube.com/@gooditemhub",
+        tag: "쇼핑",
+        emoji: "🛍️",
+        description:
+          "생활에 도움이 되는 제품을 소개하는 쇼핑 큐레이션 채널입니다. 제휴 링크로 수익화합니다.",
+      },
+    ],
+  },
+
+  // ---------- 4. Projects (운영 중인 사이트·도구) ----------
   // 운영 중인 사이트 / 채널 / 서비스를 카드로 보여줍니다.
   projects: [
-    {
-      title: "AI 쇼츠 채널",
-      description:
-        "동물 구조 스토리 시리즈를 매일 자동 발행하는 유튜브 쇼츠 채널입니다. 대본 생성부터 업로드까지 전 과정을 자동화했습니다.",
-      href: "https://youtube.com/@yourchannel",
-      tags: ["YouTube", "Shorts", "자동화"],
-      status: "운영 중",
-      emoji: "🎬",
-    },
-    {
-      title: "AI 음악 레이블",
-      description:
-        "Suno AI로 제작한 트랙을 DistroKid를 통해 Spotify·Apple Music 등 글로벌 플랫폼에 발매합니다.",
-      href: "https://open.spotify.com/artist/2w9UTjpzUn0fdVXxQKI4Uh",
-      tags: ["Suno AI", "DistroKid", "음원 유통"],
-      status: "운영 중",
-      emoji: "🎵",
-    },
     {
       title: "네이버 블로그 · 지출추적자",
       description:
@@ -136,15 +182,6 @@ export const site = {
       emoji: "☕",
     },
     {
-      title: "네이버 엑스퍼트 · 지출추적자",
-      description:
-        "지식iN 엑스퍼트 전문가로 등록해 1:1 유료 상담을 제공합니다. 블로그·카페에서 쌓은 신뢰를 상담 수익으로 연결합니다.",
-      href: "https://expert.naver.com/expert/profile/home?storeId=100060593",
-      tags: ["네이버 엑스퍼트", "1:1 상담", "수익화"],
-      status: "운영 중",
-      emoji: "🎓",
-    },
-    {
       title: "콘텐츠 자동화 툴킷",
       description:
         "ffmpeg와 Whisper를 조합해 자막·나레이션·BGM을 자동 합성하는 내부 제작 도구입니다.",
@@ -155,7 +192,7 @@ export const site = {
     },
   ],
 
-  // ---------- 4. Services (의뢰 가능한 유료 서비스) ----------
+  // ---------- 5. Services (의뢰 가능한 유료 서비스) ----------
   // accent: "naver" | "kmong" | "neutral" — 플랫폼 배지 색상
   // price / points / proofHref 는 비워 두면 해당 요소가 표시되지 않습니다.
   services: {
@@ -216,7 +253,7 @@ export const site = {
     ],
   },
 
-  // ---------- 5. Music (Spotify 앨범) ----------
+  // ---------- 6. Music (Spotify 앨범) ----------
   // 앨범을 추가하려면 아래 배열에 한 줄만 넣으면 됩니다.
   // id = 스포티파이 앨범 링크에서 /album/ 뒤에 오는 문자열
   //   예) https://open.spotify.com/album/2sDqPRdDouf4e3QkJCdASu
@@ -240,7 +277,7 @@ export const site = {
     ],
   },
 
-  // ---------- 6. Contact / Social ----------
+  // ---------- 7. Contact / Social ----------
   contact: {
     heading: "함께 만들 이야기가 있다면",
     description:
@@ -252,7 +289,7 @@ export const site = {
     { label: "Email", href: "mailto:your@email.com", icon: "mail" },
     { label: "GitHub", href: "https://github.com/yourname", icon: "github" },
     { label: "네이버 블로그", href: "https://blog.naver.com/ktntopia", icon: "naver" },
-    { label: "YouTube", href: "https://youtube.com/@yourchannel", icon: "youtube" },
+    { label: "YouTube", href: "https://www.youtube.com/@changhomusic", icon: "youtube" },
     {
       label: "Spotify",
       href: "https://open.spotify.com/artist/2w9UTjpzUn0fdVXxQKI4Uh",
@@ -263,6 +300,7 @@ export const site = {
   // ---------- 네비게이션 ----------
   nav: [
     { label: "About", href: "#about" },
+    { label: "Channels", href: "#channels" },
     { label: "Projects", href: "#projects" },
     { label: "Services", href: "#services" },
     { label: "Music", href: "#music" },
@@ -274,4 +312,5 @@ export type Site = typeof site;
 export type Project = (typeof site.projects)[number];
 export type Album = (typeof site.music.albums)[number];
 export type Service = (typeof site.services.items)[number];
+export type Channel = (typeof site.channels.items)[number];
 export type SocialIcon = (typeof site.socials)[number]["icon"];
