@@ -75,21 +75,17 @@ export default function Hero() {
               aria-hidden
               className="absolute -inset-2 rounded-full bg-gradient-to-tr from-brand-400/40 to-brand-200/10 blur-xl"
             />
-            <div className="relative size-full overflow-hidden rounded-full border-4 border-white bg-gradient-to-br from-brand-500 to-brand-700 shadow-xl dark:border-slate-900">
-              {hero.avatar ? (
-                <Image
-                  src={hero.avatar}
-                  alt={`${site.name} 프로필 사진`}
-                  fill
-                  priority
-                  sizes="(min-width: 768px) 13rem, 9rem"
-                  className="object-cover"
-                />
-              ) : (
-                <span className="flex size-full items-center justify-center text-4xl font-bold text-white">
-                  {hero.initials}
-                </span>
-              )}
+            <div className="relative size-full overflow-hidden rounded-full border-4 border-white bg-slate-950 shadow-xl dark:border-slate-800">
+              <Image
+                src={hero.avatar || site.logo.mark}
+                alt={
+                  hero.avatar ? `${site.name} 프로필 사진` : `${site.name} 로고`
+                }
+                fill
+                priority
+                sizes="(min-width: 768px) 13rem, 9rem"
+                className="object-cover"
+              />
             </div>
           </div>
           <p className="mt-5 text-sm font-semibold text-slate-900 dark:text-white">

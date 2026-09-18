@@ -34,7 +34,22 @@ npm run dev     # 2. 개발 서버 실행
 ### 프로필 사진 넣기
 1. 사진 파일을 `public/profile.jpg` 로 복사
 2. `site.ts` 의 `hero.avatar` 를 `"/profile.jpg"` 로 변경
-   (빈 값 `""` 이면 `initials` 이니셜 원형 아바타가 표시됩니다)
+   (빈 값 `""` 이면 로고 심볼 마크 `public/mark.png` 가 아바타로 표시됩니다)
+
+### 로고 파일
+
+| 파일 | 용도 |
+| --- | --- |
+| `public/logo.png` | 원본 로고 (보관용) |
+| `public/wordmark-light.png` | 헤더 워드마크 — 라이트 모드 (검은 글자) |
+| `public/wordmark-dark.png` | 헤더 워드마크 — 다크 모드 (흰 글자) |
+| `public/mark.png` | 원형 심볼 마크 (기본 아바타) |
+| `src/app/icon.png` | 파비콘 (브라우저 탭) |
+| `src/app/apple-icon.png` | iOS 홈 화면 아이콘 |
+| `src/app/opengraph-image.png` | 카카오톡·트위터 등 공유 시 미리보기 이미지 |
+
+로고를 교체할 때는 **같은 파일명으로 덮어쓰고**, 워드마크의 경우
+`site.ts` 의 `logo.width` / `logo.height` 를 새 이미지의 실제 픽셀 크기로 맞춰 주세요.
 
 ### 포인트 색상 바꾸기
 `src/app/globals.css` 의 `--color-brand-50` ~ `--color-brand-950` 값만 바꾸면 사이트 전체 색이 한 번에 바뀝니다.
@@ -45,13 +60,15 @@ npm run dev     # 2. 개발 서버 실행
 
 ```
 my-portfolio/
-├─ public/                  # 정적 파일 (프로필 사진, OG 이미지 등)
+├─ public/                  # 로고 · 워드마크 · 프로필 사진
 ├─ src/
 │  ├─ app/
 │  │  ├─ layout.tsx         # 공통 레이아웃 · SEO 메타데이터 · 다크모드 초기화
 │  │  ├─ page.tsx           # 랜딩 페이지 (섹션 조립)
 │  │  ├─ globals.css        # Tailwind 설정 · 브랜드 컬러 토큰
-│  │  ├─ icon.svg           # 파비콘
+│  │  ├─ icon.png           # 파비콘 (로고 심볼)
+│  │  ├─ apple-icon.png     # iOS 홈 화면 아이콘
+│  │  ├─ opengraph-image.png# 공유 미리보기 이미지
 │  │  ├─ sitemap.ts         # /sitemap.xml 자동 생성
 │  │  └─ robots.ts          # /robots.txt 자동 생성
 │  ├─ components/
@@ -99,7 +116,8 @@ my-portfolio/
 
 - ✅ 모바일 / 태블릿 / PC 반응형 레이아웃
 - ✅ 다크모드 (시스템 설정 자동 감지 + 수동 토글, 새로고침 시 깜빡임 없음)
-- ✅ SEO 메타데이터 · Open Graph · sitemap.xml · robots.txt 자동 생성
+- ✅ 로고 자동 적용 (헤더 워드마크는 라이트/다크 모드에 따라 자동 전환)
+- ✅ SEO 메타데이터 · Open Graph 공유 이미지 · sitemap.xml · robots.txt 자동 생성
 - ✅ 부드러운 앵커 스크롤 이동
 - ✅ 접근성 (건너뛰기 링크, aria 라벨, 키보드 포커스)
 - ✅ `prefers-reduced-motion` 대응

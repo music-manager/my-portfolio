@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { site } from "@/data/site";
 import ThemeToggle from "./ThemeToggle";
@@ -24,12 +25,23 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-5 sm:px-8">
-        <a
-          href="#top"
-          className="text-base font-bold tracking-tight text-slate-900 dark:text-white"
-        >
-          {site.name}
-          <span className="text-brand-500">.</span>
+        <a href="#top" aria-label={`${site.name} 홈`} className="shrink-0">
+          <Image
+            src={site.logo.wordmarkLight}
+            alt={site.name}
+            width={site.logo.width}
+            height={site.logo.height}
+            priority
+            className="h-[18px] w-auto dark:hidden"
+          />
+          <Image
+            src={site.logo.wordmarkDark}
+            alt={site.name}
+            width={site.logo.width}
+            height={site.logo.height}
+            priority
+            className="hidden h-[18px] w-auto dark:block"
+          />
         </a>
 
         <nav className="hidden items-center gap-1 sm:flex">

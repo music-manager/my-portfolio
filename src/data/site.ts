@@ -5,12 +5,25 @@
 
 export const site = {
   // ---------- 기본 정보 (SEO / 브라우저 탭) ----------
-  name: "홍길동",
+  name: "CHANGHO",
   role: "AI 콘텐츠 자동화 크리에이터",
   siteUrl: "https://example.com", // 배포 후 실제 도메인으로 변경
-  metaTitle: "홍길동 | AI 콘텐츠 자동화 크리에이터",
+  metaTitle: "CHANGHO | AI 콘텐츠 자동화 크리에이터",
   metaDescription:
     "AI로 영상·음악·블로그 콘텐츠를 자동으로 만들고 유통합니다. 포트폴리오와 운영 중인 채널을 소개합니다.",
+
+  // ---------- 로고 ----------
+  // 로고 이미지는 /public 에 있습니다. 교체하려면 같은 이름으로 덮어쓰고
+  // width/height(원본 픽셀 크기)만 맞춰 주세요.
+  logo: {
+    // 헤더 워드마크 — 배경색에 따라 자동으로 바뀝니다
+    wordmarkLight: "/wordmark-light.png", // 밝은 배경용 (검은 글자)
+    wordmarkDark: "/wordmark-dark.png", // 어두운 배경용 (흰 글자)
+    width: 593,
+    height: 96,
+    // 원형 심볼 마크 — 프로필 사진이 없을 때 아바타로 사용
+    mark: "/mark.png",
+  },
 
   // ---------- 1. 히어로 섹션 ----------
   hero: {
@@ -19,9 +32,8 @@ export const site = {
     tagline:
       "유튜브 쇼츠·AI 음악·블로그까지, 기획부터 발행까지 전 과정을 자동화하는 시스템을 만듭니다.",
     // /public 폴더에 사진을 넣고 "/profile.jpg" 처럼 적으면 사진이 표시됩니다.
-    // 빈 값("")이면 아래 initials(이니셜)이 대신 표시됩니다.
+    // 빈 값("")이면 로고 심볼 마크(logo.mark)가 대신 표시됩니다.
     avatar: "",
-    initials: "HG",
     primaryCta: { label: "프로젝트 보기", href: "#projects" },
     secondaryCta: { label: "연락하기", href: "#contact" },
   },
