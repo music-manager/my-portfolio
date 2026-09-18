@@ -361,13 +361,39 @@ export const site = {
       "AI로 제작해 DistroKid를 통해 전 세계 스트리밍 플랫폼에 발매한 앨범입니다. 아래에서 바로 들어볼 수 있습니다.",
     // 스포티파이 아티스트 페이지 주소를 넣으면 '전체 앨범 보기' 버튼이 표시됩니다.
     artistUrl: "https://open.spotify.com/artist/2w9UTjpzUn0fdVXxQKI4Uh",
+    // cover: public/albums 안의 정사각형 이미지 경로입니다.
+    // 비워 두면 스포티파이 아이콘이 대신 표시됩니다.
     albums: [
-      { id: "0DRJkPikkPg0kD8Filafni", title: "그 계절의 끝에서", cover: "" },
-      { id: "7Gs2VT3PwKTcmqHbG5SSUz", title: "Midnight Summer", cover: "" },
-      { id: "2sDqPRdDouf4e3QkJCdASu", title: "인생 한잔", cover: "" },
-      { id: "13N3QYzoyCxmpwlOStwqXc", title: "Neon Velvet", cover: "" },
-      { id: "5ZQCHa4MHNXI9PiTCqzoJD", title: "PINKY RUNWAY", cover: "" },
-      { id: "2SnsQLVwTMJ44vFlgKrPHF", title: "PINKY KITCHEN", cover: "" },
+      {
+        id: "0DRJkPikkPg0kD8Filafni",
+        title: "그 계절의 끝에서",
+        cover: "/albums/season-end.jpg",
+      },
+      {
+        id: "7Gs2VT3PwKTcmqHbG5SSUz",
+        title: "Midnight Summer",
+        cover: "/albums/midnight-summer.jpg",
+      },
+      {
+        id: "2sDqPRdDouf4e3QkJCdASu",
+        title: "인생 한잔",
+        cover: "/albums/life-one-glass.jpg",
+      },
+      {
+        id: "13N3QYzoyCxmpwlOStwqXc",
+        title: "Neon Velvet",
+        cover: "/albums/neon-velvet.jpg",
+      },
+      {
+        id: "5ZQCHa4MHNXI9PiTCqzoJD",
+        title: "PINKY RUNWAY",
+        cover: "/albums/pinky-runway.jpg",
+      },
+      {
+        id: "2SnsQLVwTMJ44vFlgKrPHF",
+        title: "PINKY KITCHEN",
+        cover: "",
+      },
     ],
   },
 

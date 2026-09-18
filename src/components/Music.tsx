@@ -4,62 +4,16 @@ import { ArrowUpRightIcon } from "./Icons";
 import Section from "./Section";
 
 /**
- * 앨범 커버를 스포티파이 oEmbed 에서 가져옵니다.
+ * 발매 앨범 섹션.
  *
- * 빌드할 때 한 번만 호출되므로 방문자 쪽 속도에는 영향이 없고,
- * 앨범을 추가해도 커버를 따로 준비할 필요가 없습니다.
- * 실패하면 null 을 돌려주고 카드가 글자만 있는 형태로 표시됩니다.
- * (site.ts 의 cover 에 직접 주소를 적으면 그 값이 우선합니다)
+ * 커버 이미지는 site.ts 의 cover 값(예: "/albums/season-end.jpg")을 그대로 씁니다.
+ * public/albums 안에 640x640 정사각형 이미지를 넣고 경로만 적어주면 됩니다.
+ * cover 를 빈 문자열로 두면 스포티파이 아이콘 카드가 대신 표시됩니다.
  */
-async function fetchCover(id: string): Promise<string | null> {
-  // url 파라미터는 반드시 인코딩해야 합니다.
-  // 인코딩하지 않으면 값 안의 https:// 를 스포티파이가 제대로 읽지 못합니다.
-  const target = encodeURIComponent(`https://open.spotify.com/album/${id}`);
-
-  try {
-    const res = await fetch(`https://open.spotify.com/oembed?url=${target}`, {
-      cache: "force-cache",
-      signal: AbortSignal.timeout(5000),
-      // User-Agent 가 없으면 거부하는 경우가 있어 함께 보냅니다
-      headers: { "User-Agent": "changho.esedy.com", Accept: "application/json" },
-    });
-    if (!res.ok) {
-      console.warn(`[music] 커버 가져오기 실패 ${id}: HTTP ${res.status}`);
-      return null;
-    }
-
-    const data: unknown = await res.json();
-    const url =
-      typeof data === "object" && data !== null && "thumbnail_url" in data
-        ? (data as { thumbnail_url?: unknown }).thumbnail_url
-        : null;
-
-    if (typeof url !== "string" || !url.startsWith("https://i.scdn.co/")) {
-      console.warn(`[music] 커버 주소 형식이 예상과 다릅니다 ${id}`);
-      return null;
-    }
-    return url;
-  } catch (error) {
-    // 빌드 환경에서 스포티파이에 접근하지 못해도 빌드는 계속되어야 합니다
-    console.warn(`[music] 커버 가져오기 실패 ${id}:`, String(error));
-    return null;
-  }
-}
-
-export default async function Music() {
+export default function Music() {
   const { music } = site;
 
   if (music.albums.length === 0) return null;
-
-  const albums = await Promise.all(
-    music.albums.map(async (album) => ({
-      ...album,
-      cover: album.cover || (await fetchCover(album.id)) || "",
-    })),
-  );
-
-  const withCover = albums.filter((a) => a.cover).length;
-  console.log(`[music] 앨범 커버 ${withCover}/${albums.length} 준비됨`);
 
   return (
     <Section
@@ -70,7 +24,7 @@ export default async function Music() {
     >
       {/* 누른 뒤에 플레이어를 불러옵니다 (AlbumPlayer 주석 참고) */}
       <ul className="grid gap-4 sm:grid-cols-2">
-        {albums.map((album) => (
+        {music.albums.map((album) => (
           <li
             key={album.id}
             className="overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-900/5 dark:bg-white/5 dark:ring-white/10"
