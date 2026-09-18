@@ -29,6 +29,7 @@ npm run dev     # 2. 개발 서버 실행
 | 프로젝트 카드 (추가/삭제 자유) | `projects` |
 | 스포티파이 앨범 목록 | `music.albums` |
 | 이메일, 연락 문구 | `contact` |
+| 네이버 엑스퍼트 유료 상담 CTA | `contact.consult` (`href` 를 `""` 로 두면 숨겨짐) |
 | GitHub · 블로그 · 유튜브 링크 | `socials` |
 | 상단 메뉴 | `nav` |
 

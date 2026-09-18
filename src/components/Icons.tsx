@@ -46,6 +46,14 @@ export function YoutubeIcon(props: IconProps) {
   );
 }
 
+export function NaverIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M6 6.5h4.4l4.2 6.2V6.5H18v11h-4.4l-4.2-6.2v6.2H6v-11Z" />
+    </svg>
+  );
+}
+
 export function SpotifyIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -86,4 +94,5 @@ export const socialIcons = {
   blog: BlogIcon,
   youtube: YoutubeIcon,
   spotify: SpotifyIcon,
+  naver: NaverIcon,
 };

@@ -118,13 +118,31 @@ export const site = {
       emoji: "🎵",
     },
     {
-      title: "티스토리 블로그",
+      title: "네이버 블로그 · 지출추적자",
       description:
-        "검색 유입 중심의 리뷰·정보 블로그. SEO 최적화 글을 자동 초안 생성 후 발행하고 제휴 링크로 수익화합니다.",
-      href: "https://yourblog.tistory.com",
-      tags: ["SEO", "블로그", "제휴 마케팅"],
+        "생활비 절약과 지출 관리를 다루는 검색 유입 중심 블로그입니다. SEO 최적화 글을 발행하고 제휴 링크로 수익화합니다.",
+      href: "https://blog.naver.com/ktntopia",
+      tags: ["네이버 블로그", "SEO", "제휴 마케팅"],
       status: "운영 중",
       emoji: "✍️",
+    },
+    {
+      title: "네이버 카페 · 지출추적자",
+      description:
+        "지출 관리 노하우를 나누는 커뮤니티입니다. 블로그에서 유입된 방문자가 머무르며 활동하는 공간으로 운영합니다.",
+      href: "https://cafe.naver.com/smartcs",
+      tags: ["네이버 카페", "커뮤니티"],
+      status: "운영 중",
+      emoji: "☕",
+    },
+    {
+      title: "네이버 엑스퍼트 · 지출추적자",
+      description:
+        "지식iN 엑스퍼트 전문가로 등록해 1:1 유료 상담을 제공합니다. 블로그·카페에서 쌓은 신뢰를 상담 수익으로 연결합니다.",
+      href: "https://expert.naver.com/expert/profile/home?storeId=100060593",
+      tags: ["네이버 엑스퍼트", "1:1 상담", "수익화"],
+      status: "운영 중",
+      emoji: "🎓",
     },
     {
       title: "콘텐츠 자동화 툴킷",
@@ -167,12 +185,26 @@ export const site = {
     description:
       "협업, 외주, 자동화 시스템 구축 문의 모두 환영합니다. 메일로 연락 주시면 빠르게 답장드립니다.",
     email: "your@email.com",
+
+    // 네이버 엑스퍼트 유료 상담 — 비워 두면("") 상담 카드가 표시되지 않습니다.
+    consult: {
+      badge: "네이버 엑스퍼트",
+      title: "1:1 유료 상담 신청하기",
+      description:
+        "지출 관리와 절약 전략을 개인 상황에 맞춰 상담해 드립니다. 네이버 엑스퍼트에서 바로 신청할 수 있습니다.",
+      href: "https://m.expert.naver.com/mobile/expert/product/detail?storeId=100060593&productId=100186801",
+      cta: "상담 상품 보기",
+      // 지식iN 활동 내역 — 상담 신뢰도를 보여 주는 보조 링크입니다.
+      proofLabel: "지식iN 활동 내역 보기",
+      proofHref:
+        "https://kin.naver.com/profile/index.naver?u=7aLa%2FWjmjZFtTWX1Yr4v56TwQ%2BvSNP3v6Ue0A26%2FkaM%3D",
+    },
   },
 
   socials: [
     { label: "Email", href: "mailto:your@email.com", icon: "mail" },
     { label: "GitHub", href: "https://github.com/yourname", icon: "github" },
-    { label: "블로그", href: "https://yourblog.tistory.com", icon: "blog" },
+    { label: "네이버 블로그", href: "https://blog.naver.com/ktntopia", icon: "naver" },
     { label: "YouTube", href: "https://youtube.com/@yourchannel", icon: "youtube" },
     {
       label: "Spotify",

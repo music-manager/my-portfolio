@@ -21,6 +21,9 @@
   --color-brand-900: #1b3d8c;
   --color-brand-950: #142a5e;
 
+  /* 네이버 브랜드 그린 — 엑스퍼트 상담 CTA 전용 */
+  --color-naver: #03c75a;
+
   --animate-fade-up: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 
   @keyframes fade-up {
