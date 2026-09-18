@@ -13,7 +13,7 @@ export default function Portfolio() {
       eyebrow="Portfolio"
       title={portfolio.heading}
       description={portfolio.description}
-      className="bg-slate-50/70 dark:bg-slate-900/40"
+      className="bg-slate-50/70 dark:bg-white/[0.03]"
     >
       <ul className="grid gap-5 sm:grid-cols-2">
         {portfolio.items.map((item) => (
@@ -22,7 +22,7 @@ export default function Portfolio() {
               href={item.href}
               target="_blank"
               rel="noreferrer"
-              className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-500/5 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-brand-700"
+              className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-500/40"
             >
               <span className="text-xs font-semibold tracking-wide text-brand-600 uppercase dark:text-brand-400">
                 {item.type}
@@ -41,7 +41,7 @@ export default function Portfolio() {
                 {item.tags.map((tag) => (
                   <li
                     key={tag}
-                    className="rounded-md bg-slate-100 px-2 py-1 text-[11px] font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-400"
+                    className="rounded-md bg-sky-50 px-2 py-1 text-[11px] font-medium text-sky-700 dark:bg-sky-500/10 dark:text-sky-300"
                   >
                     {tag}
                   </li>

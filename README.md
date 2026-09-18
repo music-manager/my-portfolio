@@ -31,6 +31,9 @@ npm run dev
 | 비어 있을 때 | 화면 동작 |
 | --- | --- |
 | `logo.wordmark*` | 헤더에 사이트 이름이 텍스트로 표시 |
+| `logo.tagline` | 헤더 이름 아래 한 줄이 숨겨짐 |
+| `hero.quote` / `hero.corner*` | 히어로의 보조 문구가 숨겨짐 |
+| `about.stats` | 숫자 카드 줄 전체가 숨겨짐 |
 | `hero.avatar` + `logo.mark` | 아바타 자리에 이름 첫 글자 표시 |
 | `channels.items` / `projects` / `services.items` / `portfolio.items` / `music.albums` | 해당 섹션 전체가 자동으로 숨겨짐 |
 
@@ -63,7 +66,7 @@ npm run dev
 ### 프로필 사진 넣기
 1. 사진 파일을 `public/profile.jpg` 로 복사
 2. `site.ts` 의 `hero.avatar` 를 `"/profile.jpg"` 로 변경
-   (빈 값 `""` 이면 로고 심볼 마크 `public/mark.png` 가 아바타로 표시됩니다)
+   (빈 값 `""` 이면 로고 심볼 마크 `public/emblem.png` 가 아바타로 표시됩니다)
 
 ### 서비스 추가하기
 
@@ -103,16 +106,20 @@ https://open.spotify.com/album/2sDqPRdDouf4e3QkJCdASu?si=...
 
 | 파일 | 용도 |
 | --- | --- |
+| `public/emblem.png` | 원형 엠블럼 — 히어로 아바타 (배경 투명) |
 | `public/logo.png` | 원본 로고 (보관용) |
-| `public/wordmark-light.png` | 헤더 워드마크 — 라이트 모드 (검은 글자) |
-| `public/wordmark-dark.png` | 헤더 워드마크 — 다크 모드 (흰 글자) |
-| `public/mark.png` | 원형 심볼 마크 (기본 아바타) |
 | `src/app/icon.png` | 파비콘 (브라우저 탭) |
 | `src/app/apple-icon.png` | iOS 홈 화면 아이콘 |
 | `src/app/opengraph-image.png` | 카카오톡·트위터 등 공유 시 미리보기 이미지 |
 
-로고를 교체할 때는 **같은 파일명으로 덮어쓰고**, 워드마크의 경우
-`site.ts` 의 `logo.width` / `logo.height` 를 새 이미지의 실제 픽셀 크기로 맞춰 주세요.
+헤더의 워드마크는 이미지가 아니라 **텍스트로 렌더링**됩니다.
+`site.ts` 의 `name` 과 `logo.tagline` 을 고치면 됩니다.
+
+워드마크 이미지를 쓰고 싶다면 `/public` 에 넣고 `logo.wordmarkLight` /
+`logo.wordmarkDark` 에 경로를, `logo.width` / `logo.height` 에 실제 픽셀 크기를 적으세요.
+
+> ⚠️ 로고를 교체할 때는 **파일 이름을 바꾸세요.** 같은 이름으로 덮어쓰면
+> Next.js 이미지 캐시가 이전 버전을 계속 내보낼 수 있습니다.
 
 ### 포인트 색상 바꾸기
 `src/app/globals.css` 의 `--color-brand-50` ~ `--color-brand-950` 값만 바꾸면 사이트 전체 색이 한 번에 바뀝니다.

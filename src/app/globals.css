@@ -8,35 +8,49 @@
     system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Apple SD Gothic Neo",
     "Noto Sans KR", sans-serif;
 
-  /* 브랜드 컬러 — 여기만 바꾸면 사이트 전체 포인트 색이 바뀝니다 */
-  --color-brand-50: #eef6ff;
-  --color-brand-100: #d9ecff;
-  --color-brand-200: #bcdeff;
-  --color-brand-300: #8ec9ff;
-  --color-brand-400: #59aaff;
-  --color-brand-500: #3388fb;
-  --color-brand-600: #1d68f0;
-  --color-brand-700: #1853dc;
-  --color-brand-800: #1a45b2;
-  --color-brand-900: #1b3d8c;
-  --color-brand-950: #142a5e;
+  /* ---------- 브랜드 컬러 : 로고의 골드 톤 ---------- */
+  --color-brand-50: #fef9ef;
+  --color-brand-100: #fdf0d5;
+  --color-brand-200: #fadfa7;
+  --color-brand-300: #f5c86f;
+  --color-brand-400: #eeae3c;
+  --color-brand-500: #e0961e;
+  --color-brand-600: #c07512;
+  --color-brand-700: #9a5513;
+  --color-brand-800: #7d4316;
+  --color-brand-900: #683815;
+  --color-brand-950: #3b1d08;
 
-  /* 네이버 브랜드 그린 — 엑스퍼트 상담 CTA 전용 */
+  /* ---------- 히어로 배경 : 로고의 일출 장면 ---------- */
+  --color-sunrise: #ff9a3c;
+  --color-dusk: #ffd79a;
+  --color-sky: #7cc4f0;
+
+  /* ---------- 플랫폼 배지 ---------- */
   --color-naver: #03c75a;
-
-  /* 크몽 서비스 배지용 액센트 */
   --color-kmong: #ffbe00;
 
-  --animate-fade-up: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-float: float 6s ease-in-out infinite;
 
   @keyframes fade-up {
     from {
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateY(18px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
     }
   }
 }
@@ -48,11 +62,22 @@
   }
 
   body {
-    @apply bg-white text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300;
+    @apply bg-white text-slate-700 antialiased dark:bg-[#0c0906] dark:text-slate-300;
+    /* 한글이 단어 중간에서 잘리지 않게 합니다.
+       긴 URL 등은 overflow-wrap 으로 넘침을 막습니다. */
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   ::selection {
-    @apply bg-brand-500/25;
+    @apply bg-brand-400/30;
+  }
+}
+
+@layer utilities {
+  /* 로고의 골드 그라데이션을 글자에 입힙니다 */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-brand-600 via-brand-500 to-sunrise bg-clip-text text-transparent;
   }
 }
 

@@ -11,9 +11,9 @@ export default function Contact() {
       eyebrow="Contact"
       title={contact.heading}
       description={contact.description}
-      className="bg-slate-50/70 dark:bg-slate-900/40"
+      className="bg-slate-50/70 dark:bg-white/[0.03]"
     >
-      <div className="rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 dark:border-slate-800 dark:bg-slate-900/60">
+      <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-brand-50 via-white to-sky-50 p-8 shadow-sm sm:p-10 dark:border-white/10 dark:from-white/5 dark:via-white/[0.03] dark:to-white/5">
         <p className="text-sm font-medium text-slate-500 dark:text-slate-500">
           이메일로 연락하기
         </p>
@@ -34,9 +34,9 @@ export default function Contact() {
                 href={social.href}
                 target={social.href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
-                className="group flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3.5 transition hover:border-brand-300 hover:bg-brand-50/50 dark:border-slate-800 dark:hover:border-brand-700 dark:hover:bg-brand-950/30"
+                className="group flex items-center gap-3 rounded-xl border border-slate-200 bg-white/70 px-4 py-3.5 transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-500/40"
               >
-                <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-600 transition group-hover:bg-brand-500 group-hover:text-white dark:bg-slate-800 dark:text-slate-400">
+                <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-600 transition group-hover:bg-gradient-to-br group-hover:from-sunrise group-hover:to-brand-500 group-hover:text-white dark:bg-white/10 dark:text-slate-300">
                   <Icon className="size-4.5" />
                 </span>
                 <span className="flex-1 text-sm font-semibold text-slate-800 dark:text-slate-200">

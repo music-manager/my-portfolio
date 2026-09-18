@@ -9,7 +9,7 @@
 // 추가했다면 이 파일에도 같은 항목을 추가해 두세요.
 // ============================================================
 
-import type { ServiceAccent } from "./types";
+import type { ServiceAccent, StatAccent } from "./types";
 
 export const site = {
   // ---------- 1. 기본 정보 (SEO / 브라우저 탭) ----------
@@ -28,15 +28,26 @@ export const site = {
     wordmarkDark: "", // 예: "/wordmark-dark.png"  (어두운 배경용, 흰 글자)
     width: 593, // 워드마크 이미지의 실제 픽셀 가로 크기
     height: 96, // 워드마크 이미지의 실제 픽셀 세로 크기
-    mark: "", // 예: "/mark.png" (원형 심볼 마크, 기본 아바타로 사용)
+    tagline: "WEB & CONTENT", // 헤더 이름 아래 한 줄. 비우면 숨겨집니다
+    mark: "", // 예: "/emblem.png" (원형 엠블럼, 기본 아바타로 사용)
   },
+
+  // 헤더 오른쪽 버튼
+  headerCta: { label: "함께 일해요", href: "#contact" },
 
   // ---------- 2. 히어로 섹션 ----------
   hero: {
-    badge: "지금 새로운 협업을 찾고 있습니다",
-    headline: "필요한 것을 빠르게 만들고, 끝까지 운영합니다.",
+    badge: "WEB × CONTENT",
+    // headline 은 기본 색, headlineAccent 는 그라데이션으로 표시됩니다
+    headline: "필요한 것을 빠르게 만들고,",
+    headlineAccent: "끝까지 운영합니다.",
     tagline:
       "웹사이트 제작부터 콘텐츠 운영까지, 작게 시작해 계속 굴러가는 구조를 만듭니다.",
+    // 로고 옆 손글씨풍 문구 (빈 배열이면 숨겨짐)
+    quote: ["작게 시작해서", "오래 굴러가는", "구조를 만듭니다."],
+    // 히어로 좌·우 하단의 작은 영문 문구
+    cornerLeft: ["BUILD TODAY", "GROW TOMORROW"],
+    cornerRight: ["SMALL STEPS", "BIG RESULTS"],
     // 프로필 사진을 /public 에 넣고 "/profile.jpg" 처럼 적으세요.
     // 비어 있으면 logo.mark 를, 그것도 비어 있으면 이름 첫 글자를 보여 줍니다.
     avatar: "",
@@ -46,6 +57,18 @@ export const site = {
 
   // ---------- 3. About Me ----------
   about: {
+    // 소개 제목 — headingAccent 는 그라데이션으로 표시됩니다
+    heading: "필요한 화면을 끝까지 만드는",
+    headingAccent: "웹 개발자, 홍길동",
+
+    // 숫자 카드. accent: "sunrise" | "sky" | "rose"
+    // 빈 배열([])로 두면 카드가 표시되지 않습니다.
+    stats: [
+      { value: "30+", label: "제작 사이트", accent: "sunrise" as StatAccent },
+      { value: "5년", label: "개발 경력", accent: "sky" as StatAccent },
+      { value: "계속", label: "운영 중", accent: "rose" as StatAccent },
+    ],
+
     paragraphs: [
       "사용자가 헤매지 않는 화면을 만드는 일을 합니다. 기획 단계에서 동선을 먼저 정리하고, 그 흐름대로 화면을 구현합니다.",
       "만든 뒤에 방치하지 않습니다. 유입과 이탈을 측정하고, 데이터에 맞춰 화면과 문구를 계속 고쳐 나갑니다.",
@@ -274,3 +297,4 @@ export type Album = (typeof site.music.albums)[number];
 export type Service = (typeof site.services.items)[number];
 export type Channel = (typeof site.channels.items)[number];
 export type PortfolioItem = (typeof site.portfolio.items)[number];
+export type Stat = (typeof site.about.stats)[number];

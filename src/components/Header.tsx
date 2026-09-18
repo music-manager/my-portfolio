@@ -20,7 +20,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 transition-colors ${
         scrolled
-          ? "border-b border-slate-200/80 bg-white/80 backdrop-blur-md dark:border-slate-800/80 dark:bg-slate-950/80"
+          ? "border-b border-slate-200/70 bg-white/85 backdrop-blur-md dark:border-white/10 dark:bg-[#0c0906]/85"
           : "border-b border-transparent"
       }`}
     >
@@ -47,9 +47,15 @@ export default function Header() {
             </>
           ) : (
             // 로고 이미지가 없으면 사이트 이름을 워드마크 대신 표시합니다
-            <span className="text-base font-bold tracking-tight text-slate-900 dark:text-white">
-              {site.name}
-              <span className="text-brand-500">.</span>
+            <span className="block leading-none">
+              <span className="text-lg font-extrabold tracking-[0.12em] text-slate-900 dark:text-white">
+                {site.name}
+              </span>
+              {site.logo.tagline ? (
+                <span className="mt-1 block text-[9px] font-semibold tracking-[0.28em] text-brand-600 dark:text-brand-400">
+                  {site.logo.tagline}
+                </span>
+              ) : null}
             </span>
           )}
         </a>
@@ -67,6 +73,13 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <a
+            href={site.headerCta.href}
+            className="hidden items-center gap-1.5 rounded-full bg-slate-900 px-4 py-2 text-xs font-bold whitespace-nowrap text-white shadow-sm transition hover:bg-slate-700 xl:inline-flex dark:bg-brand-500 dark:text-slate-950 dark:hover:bg-brand-400"
+          >
+            {site.headerCta.label}
+            <span aria-hidden>→</span>
+          </a>
           <ThemeToggle />
           <button
             type="button"
