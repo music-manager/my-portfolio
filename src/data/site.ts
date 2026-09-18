@@ -199,7 +199,7 @@ export const site = {
         url: "https://www.youtube.com/@gooditemhub",
         tag: "쇼핑",
         emoji: "🛍️",
-        avatar: "",
+        avatar: "/channels/gooditemhub.jpg",
         description:
           "생활에 도움이 되는 제품을 소개하는 쇼핑 큐레이션 채널입니다. 제휴 링크로 수익화합니다.",
       },
