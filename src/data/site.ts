@@ -303,8 +303,8 @@ export const site = {
           "반려동물 생애주기에 맞춘 케어와 장례 연계 서비스를 제공하는 종합 플랫폼입니다.",
         href: "https://petdamda.com/",
         tags: ["반려동물", "종합 플랫폼", "반응형"],
-        // 첫 화면 캡처. /public/portfolio/ 에 넣고 경로를 적으면 카드에 표시됩니다.
-        thumbnail: "",
+        // 첫 화면 캡처 (16:9). public/portfolio/README.md 참고
+        thumbnail: "/portfolio/petdamda.jpg",
       },
       {
         client: "생활계산기 (esedy)",
@@ -313,7 +313,7 @@ export const site = {
           "생활 속에서 자주 쓰는 계산을 한곳에서 처리할 수 있는 반응형 웹 플랫폼입니다.",
         href: "https://esedy.com/",
         tags: ["웹 플랫폼", "계산기", "반응형"],
-        thumbnail: "",
+        thumbnail: "/portfolio/esedy.jpg",
       },
       {
         client: "케이하이로봇",
@@ -322,7 +322,7 @@ export const site = {
           "B2B 고객을 대상으로 한 반응형 랜딩페이지입니다. 핵심 메시지와 문의 동선을 한 화면에 담았습니다.",
         href: "https://celebrated-bublanina-75cc79.netlify.app",
         tags: ["B2B", "랜딩페이지", "반응형"],
-        thumbnail: "",
+        thumbnail: "/portfolio/khirobot.jpg",
       },
       {
         client: "CHANGHO 포트폴리오",
@@ -331,7 +331,7 @@ export const site = {
           "지금 보고 계신 이 사이트입니다. 운영 채널·서비스·제작 실적을 한 페이지에 모은 허브로, 콘텐츠를 설정 파일 한 곳에서 관리하도록 설계했습니다.",
         href: "https://changho.esedy.com",
         tags: ["Next.js", "반응형", "SEO"],
-        thumbnail: "",
+        thumbnail: "/portfolio/changho.jpg",
       },
       {
         client: "신경기로지스",
@@ -340,7 +340,7 @@ export const site = {
           "물류 기업의 반응형 기업 홈페이지입니다. 회사 소개와 서비스 안내, 문의 동선을 구성했습니다.",
         href: "https://singyeonggi.com/",
         tags: ["물류", "기업 홈페이지", "반응형"],
-        thumbnail: "",
+        thumbnail: "/portfolio/singyeonggi.jpg",
       },
     ],
   },
@@ -360,12 +360,12 @@ export const site = {
     // 스포티파이 아티스트 페이지 주소를 넣으면 '전체 앨범 보기' 버튼이 표시됩니다.
     artistUrl: "https://open.spotify.com/artist/2w9UTjpzUn0fdVXxQKI4Uh",
     albums: [
-      { id: "2sDqPRdDouf4e3QkJCdASu", title: "앨범 1" },
-      { id: "7Gs2VT3PwKTcmqHbG5SSUz", title: "앨범 2" },
-      { id: "13N3QYzoyCxmpwlOStwqXc", title: "앨범 3" },
-      { id: "2SnsQLVwTMJ44vFlgKrPHF", title: "앨범 4" },
-      { id: "5ZQCHa4MHNXI9PiTCqzoJD", title: "앨범 5" },
-      { id: "0DRJkPikkPg0kD8Filafni", title: "앨범 6" },
+      { id: "0DRJkPikkPg0kD8Filafni", title: "그 계절의 끝에서" },
+      { id: "7Gs2VT3PwKTcmqHbG5SSUz", title: "Midnight Summer" },
+      { id: "2sDqPRdDouf4e3QkJCdASu", title: "인생 한잔" },
+      { id: "13N3QYzoyCxmpwlOStwqXc", title: "Neon Velvet" },
+      { id: "5ZQCHa4MHNXI9PiTCqzoJD", title: "PINKY RUNWAY" },
+      { id: "2SnsQLVwTMJ44vFlgKrPHF", title: "PINKY KITCHEN" },
     ],
   },
 
