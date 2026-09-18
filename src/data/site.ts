@@ -182,10 +182,19 @@ export const site = {
       emoji: "☕",
     },
     {
+      title: "티스토리 블로그",
+      description:
+        "검색 유입을 노리는 두 번째 블로그입니다. 네이버 블로그와 주제를 나눠 구글·다음 검색 채널을 함께 확보합니다.",
+      href: "https://ktntopia.tistory.com",
+      tags: ["티스토리", "구글 SEO"],
+      status: "운영 중",
+      emoji: "📝",
+    },
+    {
       title: "콘텐츠 자동화 툴킷",
       description:
         "ffmpeg와 Whisper를 조합해 자막·나레이션·BGM을 자동 합성하는 내부 제작 도구입니다.",
-      href: "https://github.com/yourname",
+      href: "https://github.com/lifetools-dev",
       tags: ["Python", "ffmpeg", "Whisper"],
       status: "개발 중",
       emoji: "🛠️",
@@ -282,13 +291,14 @@ export const site = {
     heading: "함께 만들 이야기가 있다면",
     description:
       "협업, 외주, 자동화 시스템 구축 문의 모두 환영합니다. 메일로 연락 주시면 빠르게 답장드립니다.",
-    email: "your@email.com",
+    email: "ktntopia@gmail.com",
   },
 
   socials: [
-    { label: "Email", href: "mailto:your@email.com", icon: "mail" },
-    { label: "GitHub", href: "https://github.com/yourname", icon: "github" },
+    { label: "Email", href: "mailto:ktntopia@gmail.com", icon: "mail" },
+    { label: "GitHub", href: "https://github.com/lifetools-dev", icon: "github" },
     { label: "네이버 블로그", href: "https://blog.naver.com/ktntopia", icon: "naver" },
+    { label: "티스토리", href: "https://ktntopia.tistory.com", icon: "blog" },
     { label: "YouTube", href: "https://www.youtube.com/@changhomusic", icon: "youtube" },
     {
       label: "Spotify",
