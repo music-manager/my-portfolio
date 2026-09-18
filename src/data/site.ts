@@ -392,7 +392,7 @@ export const site = {
       {
         id: "2SnsQLVwTMJ44vFlgKrPHF",
         title: "PINKY KITCHEN",
-        cover: "",
+        cover: "/albums/pinky-kitchen.jpg",
       },
     ],
   },
