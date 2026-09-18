@@ -139,6 +139,7 @@ my-portfolio/
 │  │  ├─ icon.png           # 파비콘 (로고 심볼)
 │  │  ├─ apple-icon.png     # iOS 홈 화면 아이콘
 │  │  ├─ opengraph-image.png# 공유 미리보기 이미지
+│  │  ├─ privacy/page.tsx   # /privacy 개인정보처리방침
 │  │  ├─ sitemap.ts         # /sitemap.xml 자동 생성
 │  │  └─ robots.ts          # /robots.txt 자동 생성
 │  ├─ components/
@@ -240,3 +241,4 @@ cp .env.example .env.local
 - ✅ `prefers-reduced-motion` 대응
 - ✅ 전 페이지 정적 생성(SSG) — 로딩 속도 최적화
 - ✅ GA4 연동 (측정 ID가 없으면 스크립트 미로드) + 외부 링크 클릭 자동 수집
+- ✅ 개인정보처리방침 페이지 (`/privacy`) — 실제 수집 항목 기준으로 작성
