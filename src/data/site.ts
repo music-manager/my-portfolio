@@ -258,7 +258,7 @@ export const site = {
           "회사소개서·브로슈어 기반 웹사이트 재구성",
           "웹 배포 지원",
         ],
-        price: "",
+        price: "149,000원부터",
         href: "https://kmong.com/gig/815010",
         cta: "크몽에서 보기",
         proofLabel: "제작 포트폴리오 보기",
