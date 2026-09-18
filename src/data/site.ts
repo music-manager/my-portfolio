@@ -9,7 +9,7 @@ export const site = {
   // ---------- 기본 정보 (SEO / 브라우저 탭) ----------
   name: "CHANGHO",
   role: "AI 콘텐츠 자동화 크리에이터",
-  siteUrl: "https://example.com", // 배포 후 실제 도메인으로 변경
+  siteUrl: "https://changho.esedy.com", // 배포 도메인
   metaTitle: "CHANGHO | AI 콘텐츠 자동화 크리에이터",
   metaDescription:
     "AI로 영상·음악·블로그 콘텐츠를 자동으로 만들고 유통합니다. 포트폴리오와 운영 중인 채널을 소개합니다.",
@@ -272,6 +272,14 @@ export const site = {
     description:
       "의뢰를 받아 기획·제작한 사이트입니다. 모두 PC·모바일 반응형으로 제작했으며, 카드를 누르면 실제 사이트로 이동합니다.",
     items: [
+      {
+        client: "CHANGHO 포트폴리오",
+        type: "개인 포트폴리오",
+        description:
+          "지금 보고 계신 이 사이트입니다. 운영 채널·서비스·제작 실적을 한 페이지에 모은 허브로, 콘텐츠를 설정 파일 한 곳에서 관리하도록 설계했습니다.",
+        href: "https://changho.esedy.com",
+        tags: ["Next.js", "반응형", "SEO"],
+      },
       {
         client: "케이하이로봇",
         type: "B2B 랜딩페이지",
