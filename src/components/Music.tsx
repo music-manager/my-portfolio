@@ -12,22 +12,36 @@ import Section from "./Section";
  * (site.ts 의 cover 에 직접 주소를 적으면 그 값이 우선합니다)
  */
 async function fetchCover(id: string): Promise<string | null> {
+  // url 파라미터는 반드시 인코딩해야 합니다.
+  // 인코딩하지 않으면 값 안의 https:// 를 스포티파이가 제대로 읽지 못합니다.
+  const target = encodeURIComponent(`https://open.spotify.com/album/${id}`);
+
   try {
-    const res = await fetch(
-      `https://open.spotify.com/oembed?url=https://open.spotify.com/album/${id}`,
-      { cache: "force-cache", signal: AbortSignal.timeout(8000) },
-    );
-    if (!res.ok) return null;
+    const res = await fetch(`https://open.spotify.com/oembed?url=${target}`, {
+      cache: "force-cache",
+      signal: AbortSignal.timeout(5000),
+      // User-Agent 가 없으면 거부하는 경우가 있어 함께 보냅니다
+      headers: { "User-Agent": "changho.esedy.com", Accept: "application/json" },
+    });
+    if (!res.ok) {
+      console.warn(`[music] 커버 가져오기 실패 ${id}: HTTP ${res.status}`);
+      return null;
+    }
+
     const data: unknown = await res.json();
     const url =
       typeof data === "object" && data !== null && "thumbnail_url" in data
         ? (data as { thumbnail_url?: unknown }).thumbnail_url
         : null;
-    return typeof url === "string" && url.startsWith("https://i.scdn.co/")
-      ? url
-      : null;
-  } catch {
+
+    if (typeof url !== "string" || !url.startsWith("https://i.scdn.co/")) {
+      console.warn(`[music] 커버 주소 형식이 예상과 다릅니다 ${id}`);
+      return null;
+    }
+    return url;
+  } catch (error) {
     // 빌드 환경에서 스포티파이에 접근하지 못해도 빌드는 계속되어야 합니다
+    console.warn(`[music] 커버 가져오기 실패 ${id}:`, String(error));
     return null;
   }
 }
@@ -43,6 +57,9 @@ export default async function Music() {
       cover: album.cover || (await fetchCover(album.id)) || "",
     })),
   );
+
+  const withCover = albums.filter((a) => a.cover).length;
+  console.log(`[music] 앨범 커버 ${withCover}/${albums.length} 준비됨`);
 
   return (
     <Section
