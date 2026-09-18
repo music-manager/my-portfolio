@@ -46,6 +46,14 @@ export function YoutubeIcon(props: IconProps) {
   );
 }
 
+export function SpotifyIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M12 1.6a10.4 10.4 0 1 0 0 20.8 10.4 10.4 0 0 0 0-20.8Zm4.77 15a.81.81 0 0 1-1.11.27c-3.06-1.87-6.9-2.29-11.43-1.26a.81.81 0 1 1-.36-1.58c4.96-1.13 9.22-.65 12.63 1.44.38.23.5.73.27 1.13Zm1.27-2.83a1.01 1.01 0 0 1-1.39.33c-3.5-2.15-8.84-2.78-12.98-1.52a1.01 1.01 0 1 1-.59-1.94c4.73-1.44 10.61-.74 14.63 1.74.47.29.62.91.33 1.39Zm.11-2.95C14 8.34 7.5 8.1 3.68 9.26a1.21 1.21 0 1 1-.7-2.32C7.36 5.6 14.54 5.88 19.2 8.64a1.21 1.21 0 1 1-1.24 2.08Z" />
+    </svg>
+  );
+}
+
 export function ArrowUpRightIcon(props: IconProps) {
   return (
     <svg {...base} {...props}>
@@ -77,4 +85,5 @@ export const socialIcons = {
   github: GithubIcon,
   blog: BlogIcon,
   youtube: YoutubeIcon,
+  spotify: SpotifyIcon,
 };

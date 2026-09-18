@@ -112,7 +112,7 @@ export const site = {
       title: "AI 음악 레이블",
       description:
         "Suno AI로 제작한 트랙을 DistroKid를 통해 Spotify·Apple Music 등 글로벌 플랫폼에 발매합니다.",
-      href: "https://open.spotify.com/",
+      href: "https://open.spotify.com/artist/2w9UTjpzUn0fdVXxQKI4Uh",
       tags: ["Suno AI", "DistroKid", "음원 유통"],
       status: "운영 중",
       emoji: "🎵",
@@ -150,7 +150,7 @@ export const site = {
     description:
       "AI로 제작해 DistroKid를 통해 전 세계 스트리밍 플랫폼에 발매한 앨범입니다. 아래에서 바로 들어볼 수 있습니다.",
     // 스포티파이 아티스트 페이지 주소를 넣으면 '전체 앨범 보기' 버튼이 표시됩니다.
-    artistUrl: "",
+    artistUrl: "https://open.spotify.com/artist/2w9UTjpzUn0fdVXxQKI4Uh",
     albums: [
       { id: "2sDqPRdDouf4e3QkJCdASu", title: "앨범 1" },
       { id: "7Gs2VT3PwKTcmqHbG5SSUz", title: "앨범 2" },
@@ -174,6 +174,11 @@ export const site = {
     { label: "GitHub", href: "https://github.com/yourname", icon: "github" },
     { label: "블로그", href: "https://yourblog.tistory.com", icon: "blog" },
     { label: "YouTube", href: "https://youtube.com/@yourchannel", icon: "youtube" },
+    {
+      label: "Spotify",
+      href: "https://open.spotify.com/artist/2w9UTjpzUn0fdVXxQKI4Uh",
+      icon: "spotify",
+    },
   ] as const,
 
   // ---------- 네비게이션 ----------
