@@ -39,7 +39,7 @@ export const site = {
     headline: "AI로 콘텐츠를 자동으로 만들고,",
     headlineAccent: "유통하고, 수익화합니다.",
     tagline:
-      "유튜브 쇼츠·AI 음악·블로그까지, 기획부터 발행까지 전 과정을 자동화하는 시스템을 만듭니다.",
+      "유튜브 쇼츠·AI 음악·블로그·홈페이지 제작까지, 기획부터 발행까지 전 과정을 자동화하는 시스템을 만듭니다.",
     // 로고 옆에 손글씨처럼 들어가는 문구 (줄바꿈은 배열로)
     quote: ["좋은 콘텐츠가", "좋은 사람들을", "더 가깝게 만듭니다."],
     // 히어로 좌·우 하단의 작은 영문 문구
@@ -61,7 +61,7 @@ export const site = {
     // 숫자 카드. accent: "sunrise" | "sky" | "rose"
     // ⚠️ 아래 수치는 시안 기준 예시입니다. 실제 값으로 바꿔 주세요.
     stats: [
-      { value: "200만+", label: "제작 콘텐츠", accent: "sunrise" as StatAccent },
+      { value: "100+", label: "제작 콘텐츠", accent: "sunrise" as StatAccent },
       { value: "10+", label: "운영 채널", accent: "sky" as StatAccent },
       { value: "계속", label: "더 좋은 콘텐츠", accent: "rose" as StatAccent },
     ],
@@ -130,33 +130,6 @@ export const site = {
       "주제별로 채널을 나눠 운영합니다. 기획부터 대본·영상·자막·업로드까지 자동화 파이프라인으로 제작합니다.",
     items: [
       {
-        name: "창호",
-        handle: "@changhomusic",
-        url: "https://www.youtube.com/@changhomusic",
-        tag: "음악",
-        emoji: "🎼",
-        description:
-          "직접 제작한 AI 음악을 공개하는 메인 음악 채널입니다. 스트리밍 플랫폼 발매곡과 연결됩니다.",
-      },
-      {
-        name: "ELIRA",
-        handle: "@eliramusic",
-        url: "https://www.youtube.com/@eliramusic",
-        tag: "음악",
-        emoji: "🎧",
-        description:
-          "별도 콘셉트로 운영하는 세컨드 음악 채널입니다. 장르와 분위기를 나눠 청취층을 넓힙니다.",
-      },
-      {
-        name: "핑키 감동극장",
-        handle: "@핑키감동극장",
-        url: "https://www.youtube.com/@핑키감동극장",
-        tag: "감동",
-        emoji: "🐶",
-        description:
-          "토이푸들 핑키가 위기에 빠진 동물을 구조하는 감동 스토리 쇼츠를 매일 발행합니다.",
-      },
-      {
         name: "동물쉐프",
         handle: "@dongmulchef",
         url: "https://www.youtube.com/@dongmulchef",
@@ -173,6 +146,33 @@ export const site = {
         emoji: "✂️",
         description:
           "강아지 미용 전후 변신 과정을 보여 주는 Before/After 중심 쇼츠 채널입니다.",
+      },
+      {
+        name: "핑키 감동극장",
+        handle: "@핑키감동극장",
+        url: "https://www.youtube.com/@핑키감동극장",
+        tag: "감동",
+        emoji: "🐶",
+        description:
+          "토이푸들 핑키가 위기에 빠진 동물을 구조하는 감동 스토리 쇼츠를 매일 발행합니다.",
+      },
+      {
+        name: "창호",
+        handle: "@changhomusic",
+        url: "https://www.youtube.com/@changhomusic",
+        tag: "음악",
+        emoji: "🎼",
+        description:
+          "직접 제작한 AI 음악을 공개하는 메인 음악 채널입니다. 스트리밍 플랫폼 발매곡과 연결됩니다.",
+      },
+      {
+        name: "ELIRA",
+        handle: "@eliramusic",
+        url: "https://www.youtube.com/@eliramusic",
+        tag: "음악",
+        emoji: "🎧",
+        description:
+          "별도 콘셉트로 운영하는 세컨드 음악 채널입니다. 장르와 분위기를 나눠 청취층을 넓힙니다.",
       },
       {
         name: "꿀템모음",
@@ -297,28 +297,14 @@ export const site = {
       "의뢰를 받아 기획·제작한 사이트입니다. 모두 PC·모바일 반응형으로 제작했으며, 카드를 누르면 실제 사이트로 이동합니다.",
     items: [
       {
-        client: "CHANGHO 포트폴리오",
-        type: "개인 포트폴리오",
+        client: "펫담다",
+        type: "종합 플랫폼",
         description:
-          "지금 보고 계신 이 사이트입니다. 운영 채널·서비스·제작 실적을 한 페이지에 모은 허브로, 콘텐츠를 설정 파일 한 곳에서 관리하도록 설계했습니다.",
-        href: "https://changho.esedy.com",
-        tags: ["Next.js", "반응형", "SEO"],
-      },
-      {
-        client: "케이하이로봇",
-        type: "B2B 랜딩페이지",
-        description:
-          "B2B 고객을 대상으로 한 반응형 랜딩페이지입니다. 핵심 메시지와 문의 동선을 한 화면에 담았습니다.",
-        href: "https://celebrated-bublanina-75cc79.netlify.app",
-        tags: ["B2B", "랜딩페이지", "반응형"],
-      },
-      {
-        client: "신경기로지스",
-        type: "기업 홈페이지",
-        description:
-          "물류 기업의 반응형 기업 홈페이지입니다. 회사 소개와 서비스 안내, 문의 동선을 구성했습니다.",
-        href: "https://singyeonggi.com/",
-        tags: ["물류", "기업 홈페이지", "반응형"],
+          "반려동물 생애주기에 맞춘 케어와 장례 연계 서비스를 제공하는 종합 플랫폼입니다.",
+        href: "https://petdamda.com/",
+        tags: ["반려동물", "종합 플랫폼", "반응형"],
+        // 첫 화면 캡처. /public/portfolio/ 에 넣고 경로를 적으면 카드에 표시됩니다.
+        thumbnail: "",
       },
       {
         client: "생활계산기 (esedy)",
@@ -327,14 +313,34 @@ export const site = {
           "생활 속에서 자주 쓰는 계산을 한곳에서 처리할 수 있는 반응형 웹 플랫폼입니다.",
         href: "https://esedy.com/",
         tags: ["웹 플랫폼", "계산기", "반응형"],
+        thumbnail: "",
       },
       {
-        client: "펫담다",
-        type: "종합 플랫폼",
+        client: "케이하이로봇",
+        type: "B2B 랜딩페이지",
         description:
-          "반려동물 생애주기에 맞춘 케어와 장례 연계 서비스를 제공하는 종합 플랫폼입니다.",
-        href: "https://petdamda.com/",
-        tags: ["반려동물", "종합 플랫폼", "반응형"],
+          "B2B 고객을 대상으로 한 반응형 랜딩페이지입니다. 핵심 메시지와 문의 동선을 한 화면에 담았습니다.",
+        href: "https://celebrated-bublanina-75cc79.netlify.app",
+        tags: ["B2B", "랜딩페이지", "반응형"],
+        thumbnail: "",
+      },
+      {
+        client: "CHANGHO 포트폴리오",
+        type: "개인 포트폴리오",
+        description:
+          "지금 보고 계신 이 사이트입니다. 운영 채널·서비스·제작 실적을 한 페이지에 모은 허브로, 콘텐츠를 설정 파일 한 곳에서 관리하도록 설계했습니다.",
+        href: "https://changho.esedy.com",
+        tags: ["Next.js", "반응형", "SEO"],
+        thumbnail: "",
+      },
+      {
+        client: "신경기로지스",
+        type: "기업 홈페이지",
+        description:
+          "물류 기업의 반응형 기업 홈페이지입니다. 회사 소개와 서비스 안내, 문의 동선을 구성했습니다.",
+        href: "https://singyeonggi.com/",
+        tags: ["물류", "기업 홈페이지", "반응형"],
+        thumbnail: "",
       },
     ],
   },
@@ -380,7 +386,6 @@ export const site = {
     },
     { label: "네이버 블로그", href: "https://blog.naver.com/ktntopia", icon: "naver" },
     { label: "티스토리", href: "https://ktntopia.tistory.com", icon: "blog" },
-    { label: "GitHub", href: "https://github.com/lifetools-dev", icon: "github" },
     { label: "Email", href: "mailto:ktntopia@gmail.com", icon: "mail" },
   ] as const,
 
