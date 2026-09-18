@@ -20,9 +20,10 @@ export const site = {
   // 비워 두면 해당 인증 태그가 아예 출력되지 않습니다.
   verification: {
     // 구글 서치콘솔 > 소유권 확인 > HTML 태그
+    // changho.esedy.com 은 DNS(도메인 공급업체)로 자동 확인되어 비워 둡니다.
     google: "",
     // 네이버 서치어드바이저 > 사이트 소유확인 > HTML 태그
-    naver: "",
+    naver: "22b127239abd8b59ac0c57ea2ea441127a6857f4",
   },
 
   // ---------- 로고 ----------
