@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/data/site";
 
 export default function Footer() {
@@ -7,12 +8,20 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {site.name}. All rights reserved.
         </p>
-        <a
-          href="#top"
-          className="transition hover:text-slate-900 dark:hover:text-white"
-        >
-          맨 위로 ↑
-        </a>
+        <div className="flex items-center gap-5">
+          <Link
+            href="/privacy"
+            className="transition hover:text-slate-900 dark:hover:text-white"
+          >
+            개인정보처리방침
+          </Link>
+          <a
+            href="#top"
+            className="transition hover:text-slate-900 dark:hover:text-white"
+          >
+            맨 위로 ↑
+          </a>
+        </div>
       </div>
     </footer>
   );
