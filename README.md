@@ -195,6 +195,10 @@ cp .env.example .env.local
 > GA4 → `관리` → `맞춤 정의` → `맞춤 측정기준 만들기` 에서 각각 등록해야 합니다.
 > 등록 전에도 `실시간` 과 `DebugView` 에서는 값이 보입니다.
 
+### 유입 출처 측정
+
+각 플랫폼에 심을 UTM 링크는 [`docs/utm-links.md`](docs/utm-links.md) 에 정리해 두었습니다.
+
 ---
 
 ## 6. 명령어
