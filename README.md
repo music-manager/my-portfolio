@@ -145,6 +145,7 @@ my-portfolio/
 │  │  ├─ Music.tsx          # 7. Music (스포티파이 앨범 플레이어)
 │  │  ├─ Contact.tsx        # 8. Contact / Social
 │  │  ├─ Footer.tsx
+│  │  ├─ Analytics.tsx      # GA4 로드 + 외부 링크 클릭 수집
 │  │  ├─ Section.tsx        # 섹션 공통 래퍼 (제목 스타일 통일)
 │  │  ├─ ThemeToggle.tsx    # 다크모드 토글
 │  │  └─ Icons.tsx          # SVG 아이콘 모음
@@ -157,7 +158,39 @@ my-portfolio/
 
 ---
 
-## 5. 명령어
+## 5. Google Analytics 4 연결
+
+측정 ID를 환경변수로 넣으면 자동으로 동작합니다. **값이 없으면 GA 스크립트를 아예 로드하지 않으므로** 로컬 개발 중에 통계가 오염되지 않습니다.
+
+**로컬**
+```bash
+cp .env.example .env.local
+# .env.local 을 열어 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX 입력
+```
+
+**Vercel**
+`Settings` → `Environment Variables` → `NEXT_PUBLIC_GA_ID` 추가 → 재배포
+
+### 자동으로 수집되는 것
+
+기본 페이지뷰 외에, **외부 링크 클릭을 `outbound_click` 이벤트로 수집**합니다.
+`Analytics.tsx` 한 곳에서 클릭을 위임 처리하므로 링크가 늘어나도 코드를 고칠 필요가 없습니다.
+
+| 파라미터 | 값 예시 | 용도 |
+| --- | --- | --- |
+| `section` | `channels`, `services`, `portfolio` | 어느 섹션에서 클릭했는지 |
+| `link_text` | `창호`, `크몽에서 보기` | 무엇을 눌렀는지 |
+| `link_url` | `https://kmong.com/gig/815010` | 어디로 갔는지 |
+
+페이지 내 앵커 이동(`#about` 등)은 집계하지 않습니다.
+
+> `section` / `link_text` / `link_url` 을 GA4 리포트에서 쓰려면
+> GA4 → `관리` → `맞춤 정의` → `맞춤 측정기준 만들기` 에서 각각 등록해야 합니다.
+> 등록 전에도 `실시간` 과 `DebugView` 에서는 값이 보입니다.
+
+---
+
+## 6. 명령어
 
 | 명령어 | 설명 |
 | --- | --- |
@@ -168,7 +201,7 @@ my-portfolio/
 
 ---
 
-## 6. 배포하기 (Vercel · 무료)
+## 7. 배포하기 (Vercel · 무료)
 
 1. 이 저장소를 GitHub에 push
 2. https://vercel.com 접속 → GitHub 계정으로 로그인
@@ -179,7 +212,7 @@ my-portfolio/
 
 ---
 
-## 7. 포함된 기능
+## 8. 포함된 기능
 
 - ✅ 모바일 / 태블릿 / PC 반응형 레이아웃
 - ✅ 다크모드 (시스템 설정 자동 감지 + 수동 토글, 새로고침 시 깜빡임 없음)
@@ -190,3 +223,4 @@ my-portfolio/
 - ✅ 접근성 (건너뛰기 링크, aria 라벨, 키보드 포커스)
 - ✅ `prefers-reduced-motion` 대응
 - ✅ 전 페이지 정적 생성(SSG) — 로딩 속도 최적화
+- ✅ GA4 연동 (측정 ID가 없으면 스크립트 미로드) + 외부 링크 클릭 자동 수집
