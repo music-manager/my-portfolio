@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Analytics from "@/components/Analytics";
+import ScrollReset from "@/components/ScrollReset";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -61,6 +62,7 @@ export default function RootLayout({
         >
           본문으로 건너뛰기
         </a>
+        <ScrollReset />
         {children}
         <Analytics />
       </body>

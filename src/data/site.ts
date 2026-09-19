@@ -253,7 +253,7 @@ export const site = {
   projectFeature: {
     status: "개발 중",
     title: "콘텐츠 허브",
-    subtitle: "네이버 글 자동화 도구",
+    subtitle: "블로그 글 자동화 도구",
     description:
       "주제 하나를 넣으면 공식 자료를 확인해 원본을 쓰고, 채널마다 새 문장으로 다시 써서 승인 뒤 예약 발행까지 이어집니다.",
     points: [
