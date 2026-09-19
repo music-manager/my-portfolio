@@ -383,36 +383,52 @@ export const site = {
     artistUrl: "https://open.spotify.com/artist/2w9UTjpzUn0fdVXxQKI4Uh",
     // cover: public/albums 안의 정사각형 이미지 경로입니다.
     // 비워 두면 스포티파이 아이콘이 대신 표시됩니다.
+    // tracks: 수록곡 목록입니다. 적어 두면 커버 옆에 표시되고
+    // 검색엔진에도 글자로 잡힙니다. 비워 두면 목록만 생략됩니다.
     albums: [
       {
         id: "0DRJkPikkPg0kD8Filafni",
         title: "그 계절의 끝에서",
         cover: "/albums/season-end.jpg",
+        tracks: [] as string[],
       },
       {
         id: "7Gs2VT3PwKTcmqHbG5SSUz",
         title: "Midnight Summer",
         cover: "/albums/midnight-summer.jpg",
+        tracks: [] as string[],
       },
       {
         id: "2sDqPRdDouf4e3QkJCdASu",
         title: "인생 한잔",
         cover: "/albums/life-one-glass.jpg",
+        tracks: [
+          "돌아가는 길",
+          "한잔의 새벽",
+          "서울 야시장",
+          "비 오는 포장마차",
+          "취했나 봐",
+          "그때 우린 젊었다",
+          "마지막 소주잔",
+        ] as string[],
       },
       {
         id: "13N3QYzoyCxmpwlOStwqXc",
         title: "Neon Velvet",
         cover: "/albums/neon-velvet.jpg",
+        tracks: [] as string[],
       },
       {
         id: "5ZQCHa4MHNXI9PiTCqzoJD",
         title: "PINKY RUNWAY",
         cover: "/albums/pinky-runway.jpg",
+        tracks: [] as string[],
       },
       {
         id: "2SnsQLVwTMJ44vFlgKrPHF",
         title: "PINKY KITCHEN",
         cover: "/albums/pinky-kitchen.jpg",
+        tracks: [] as string[],
       },
     ],
   },

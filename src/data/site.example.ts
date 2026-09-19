@@ -275,7 +275,14 @@ export const site = {
     description:
       "스트리밍 플랫폼에 발매한 앨범입니다. 아래에서 바로 들어볼 수 있습니다.",
     artistUrl: "",
-    albums: [] as { id: string; title: string; cover?: string }[],
+    // tracks 를 적어 두면 커버 옆에 수록곡이 표시되고
+    // 검색엔진에도 곡 제목이 글자로 잡힙니다.
+    albums: [] as {
+      id: string;
+      title: string;
+      cover?: string;
+      tracks?: string[];
+    }[],
   },
 
   // ---------- 9. Contact / Social ----------
