@@ -24,11 +24,14 @@ const PLAYER_HEIGHT = 352;
 export default function AlbumPlayer({
   id,
   title,
+  artist,
   cover,
   tracks = [],
 }: {
   id: string;
   title: string;
+  /** 제목 옆에 표시할 아티스트 이름. 비어 있으면 표시되지 않습니다. */
+  artist?: string;
   /** 앨범 커버 주소. 비어 있으면 스포티파이 아이콘으로 대체됩니다. */
   cover?: string;
   /** 수록곡 제목 목록. 비어 있으면 목록 없이 안내 문구만 표시됩니다. */
@@ -83,8 +86,13 @@ export default function AlbumPlayer({
       </button>
 
       <div className="flex min-w-0 flex-col">
-        <h3 className="text-xl font-extrabold text-white sm:text-2xl">
-          {title}
+        <h3 className="flex flex-wrap items-baseline gap-x-2.5 text-xl font-extrabold text-white sm:text-2xl">
+          <span>{title}</span>
+          {artist ? (
+            <span className="text-sm font-semibold text-slate-400">
+              · {artist}
+            </span>
+          ) : null}
         </h3>
 
         {tracks.length > 0 ? (
