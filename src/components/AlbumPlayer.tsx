@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PlayIcon, SpotifyIcon } from "./Icons";
 
 // 눌렀을 때 뜨는 스포티파이 플레이어의 높이.
@@ -38,101 +38,111 @@ export default function AlbumPlayer({
   tracks?: string[];
 }) {
   const [opened, setOpened] = useState(false);
+  const boxRef = useRef<HTMLDivElement>(null);
 
-  if (opened) {
-    return (
-      <iframe
-        src={`https://open.spotify.com/embed/album/${id}?utm_source=generator`}
-        title={`${title} — Spotify 플레이어`}
-        width="100%"
-        height={PLAYER_HEIGHT}
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        className="block w-full border-0"
-      />
-    );
-  }
+  // 카드가 플레이어로 바뀌면 높이가 줄어들어, 보고 있던 앨범 자리에
+  // 아래쪽 앨범이 올라옵니다. 방금 연 플레이어를 화면 가운데로
+  // 옮겨 주어 누른 앨범을 계속 보고 있게 합니다.
+  useEffect(() => {
+    if (!opened) return;
+    boxRef.current?.scrollIntoView({ block: "center" });
+  }, [opened]);
 
   const open = () => setOpened(true);
 
   return (
-    <div className="group grid gap-5 bg-gradient-to-br from-slate-900 to-slate-800 p-5 transition hover:from-slate-800 sm:p-6 md:grid-cols-[14rem_1fr] md:gap-7 dark:from-white/10 dark:to-white/5">
-      {/* 커버를 눌러도 재생됩니다 */}
-      <button
-        type="button"
-        onClick={open}
-        aria-label={`${title} 재생`}
-        className="relative block aspect-square w-full overflow-hidden rounded-xl bg-slate-800 ring-1 ring-white/10"
-      >
-        {cover ? (
-          <Image
-            src={cover}
-            alt={`${title} 앨범 커버`}
-            fill
-            sizes="(min-width: 768px) 14rem, 100vw"
-            className="object-cover transition duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <span className="flex size-full items-center justify-center bg-gradient-to-br from-slate-700 to-slate-900">
-            <SpotifyIcon className="size-12 text-white/20" />
-          </span>
-        )}
-
-        {/* 커버 위에 올라가는 재생 버튼 */}
-        <span className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition group-hover:opacity-100">
-          <span className="flex size-14 items-center justify-center rounded-full bg-[#1db954] text-slate-950 shadow-lg">
-            <PlayIcon className="size-6 translate-x-0.5" />
-          </span>
-        </span>
-      </button>
-
-      <div className="flex min-w-0 flex-col">
-        <h3 className="flex flex-wrap items-baseline gap-x-2.5 text-xl font-extrabold text-white sm:text-2xl">
-          <span>{title}</span>
-          {artist ? (
-            <span className="text-sm font-semibold text-slate-400">
-              · {artist}
-            </span>
-          ) : null}
-        </h3>
-
-        {tracks.length > 0 ? (
-          <ol className="mt-4 grid gap-3 sm:grid-cols-2 md:gap-x-6">
-            {tracks.map((track, index) => (
-              <li key={track} className="flex gap-2.5">
-                <span className="w-4 shrink-0 text-right text-xs leading-5 tabular-nums text-slate-500">
-                  {index + 1}
-                </span>
-                {/* 스포티파이처럼 곡 제목 아래에 아티스트를 적습니다 */}
-                <span className="min-w-0">
-                  <span className="block text-sm leading-5 text-slate-300">
-                    {track}
-                  </span>
-                  {artist ? (
-                    <span className="mt-0.5 block text-xs leading-4 text-slate-500">
-                      {artist}
-                    </span>
-                  ) : null}
-                </span>
-              </li>
-            ))}
-          </ol>
-        ) : (
-          <p className="mt-3 text-sm text-slate-400">
-            스포티파이에서 바로 들어볼 수 있습니다.
-          </p>
-        )}
-
-        <div className="mt-5 flex flex-1 items-end">
+    <div ref={boxRef}>
+      {opened ? (
+        <iframe
+          src={`https://open.spotify.com/embed/album/${id}?utm_source=generator`}
+          title={`${title} — Spotify 플레이어`}
+          width="100%"
+          height={PLAYER_HEIGHT}
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          className="block w-full border-0"
+        />
+      ) : (
+        /* 모바일은 커버와 제목을 한 줄에 두어 카드를 낮게 만듭니다.
+           PC(md 이상)는 커버가 왼쪽 칸 전체를 차지합니다. */
+        <div className="group grid grid-cols-[8rem_1fr] gap-x-4 gap-y-4 bg-gradient-to-br from-slate-900 to-slate-800 p-5 transition hover:from-slate-800 sm:grid-cols-[10rem_1fr] sm:p-6 md:grid-cols-[14rem_1fr] md:gap-x-7 dark:from-white/10 dark:to-white/5">
+          {/* 커버를 눌러도 재생됩니다 */}
           <button
             type="button"
             onClick={open}
-            className="inline-flex items-center gap-2 rounded-full bg-[#1db954] px-5 py-2.5 text-sm font-bold text-slate-950 shadow-lg transition hover:brightness-110"
+            aria-label={`${title} 재생`}
+            className="relative block aspect-square w-full self-start overflow-hidden rounded-xl bg-slate-800 ring-1 ring-white/10 md:row-span-2"
           >
-            <PlayIcon className="size-4 translate-x-0.5" />
-            스포티파이에서 재생
+            {cover ? (
+              <Image
+                src={cover}
+                alt={`${title} 앨범 커버`}
+                fill
+                sizes="(min-width: 768px) 14rem, (min-width: 640px) 10rem, 8rem"
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+            ) : (
+              <span className="flex size-full items-center justify-center bg-gradient-to-br from-slate-700 to-slate-900">
+                <SpotifyIcon className="size-10 text-white/20" />
+              </span>
+            )}
+
+            {/* 커버 위에 올라가는 재생 버튼 */}
+            <span className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition group-hover:opacity-100">
+              <span className="flex size-12 items-center justify-center rounded-full bg-[#1db954] text-slate-950 shadow-lg">
+                <PlayIcon className="size-5 translate-x-0.5" />
+              </span>
+            </span>
           </button>
+
+          <h3 className="flex min-w-0 flex-wrap items-baseline gap-x-2.5 self-center text-lg font-extrabold text-white sm:text-xl md:self-start md:text-2xl">
+            <span>{title}</span>
+            {artist ? (
+              <span className="text-sm font-semibold text-slate-400">
+                · {artist}
+              </span>
+            ) : null}
+          </h3>
+
+          {/* 수록곡과 재생 버튼은 모바일에서 아래 줄 전체를 씁니다 */}
+          <div className="col-span-2 min-w-0 md:col-span-1 md:col-start-2">
+            {tracks.length > 0 ? (
+              <ol className="grid gap-3 sm:grid-cols-2 md:gap-x-6">
+                {tracks.map((track, index) => (
+                  <li key={track} className="flex gap-2.5">
+                    <span className="w-4 shrink-0 text-right text-xs leading-5 tabular-nums text-slate-500">
+                      {index + 1}
+                    </span>
+                    {/* 스포티파이처럼 곡 제목 아래에 아티스트를 적습니다 */}
+                    <span className="min-w-0">
+                      <span className="block text-sm leading-5 text-slate-300">
+                        {track}
+                      </span>
+                      {artist ? (
+                        <span className="mt-0.5 block text-xs leading-4 text-slate-500">
+                          {artist}
+                        </span>
+                      ) : null}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <p className="text-sm text-slate-400">
+                스포티파이에서 바로 들어볼 수 있습니다.
+              </p>
+            )}
+
+            <button
+              type="button"
+              onClick={open}
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#1db954] px-5 py-2.5 text-sm font-bold text-slate-950 shadow-lg transition hover:brightness-110"
+            >
+              <PlayIcon className="size-4 translate-x-0.5" />
+              스포티파이에서 재생
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
