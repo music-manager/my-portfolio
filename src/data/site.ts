@@ -240,7 +240,8 @@ export const site = {
       title: "콘텐츠 자동화 툴킷",
       description:
         "ffmpeg와 Whisper를 조합해 자막·나레이션·BGM을 자동 합성하는 내부 제작 도구입니다.",
-      href: "https://github.com/lifetools-dev",
+      // "/" 로 시작하면 이 사이트 안의 페이지로 이동합니다
+      href: "/toolkit",
       tags: ["Python", "ffmpeg", "Whisper"],
       status: "개발 중",
       emoji: "🛠️",
