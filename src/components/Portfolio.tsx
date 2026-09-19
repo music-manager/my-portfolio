@@ -18,81 +18,83 @@ export default function Portfolio() {
       description={portfolio.description}
       className="bg-slate-50/70 dark:bg-white/[0.03]"
     >
-      {/* 첫 항목은 대표작으로 크게 배치합니다 */}
-      <a
-        href={featured.href}
-        target="_blank"
-        rel="noreferrer"
-        className="group mb-5 grid gap-6 overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 sm:p-6 md:grid-cols-2 md:items-center dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-500/40"
-      >
-        <Preview item={featured} className="md:order-2" />
-
-        <div className="md:order-1 md:px-2">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-[11px] font-bold tracking-wide text-brand-800 dark:bg-brand-500/15 dark:text-brand-300">
-            대표작 · {featured.type}
-          </span>
-
-          <h3 className="mt-4 flex items-center gap-2 text-2xl font-extrabold text-slate-900 sm:text-3xl dark:text-white">
-            {featured.client}
-            <ArrowUpRightIcon className="size-5 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-500" />
-          </h3>
-
-          <p className="mt-3 text-base leading-relaxed text-slate-600 dark:text-slate-400">
-            {featured.description}
-          </p>
-
-          <ul className="mt-5 flex flex-wrap gap-1.5">
-            {featured.tags.map((tag) => (
-              <li
-                key={tag}
-                className="rounded-md bg-sky-50 px-2.5 py-1 text-[11px] font-medium text-sky-700 dark:bg-sky-500/10 dark:text-sky-300"
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </a>
-
-      <ul className="grid gap-5 sm:grid-cols-2">
+      {/* 모든 항목을 한 줄에 하나씩, 캡처를 크게 보여 줍니다.
+          첫 항목만 '대표작' 배지와 큰 글씨로 강조합니다. */}
+      <ul className="grid gap-5">
+        <li>
+          <Card item={featured} featured />
+        </li>
         {rest.map((item) => (
           <li key={item.href}>
-            <a
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-500/40"
-            >
-              <Preview item={item} />
-
-              <span className="mt-4 block text-xs font-semibold tracking-wide text-brand-600 uppercase dark:text-brand-400">
-                {item.type}
-              </span>
-
-              <h3 className="mt-1.5 flex items-center gap-1.5 text-lg font-semibold text-slate-900 dark:text-white">
-                {item.client}
-                <ArrowUpRightIcon className="size-4 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-500" />
-              </h3>
-
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                {item.description}
-              </p>
-
-              <ul className="mt-5 flex flex-wrap gap-1.5">
-                {item.tags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="rounded-md bg-sky-50 px-2 py-1 text-[11px] font-medium text-sky-700 dark:bg-sky-500/10 dark:text-sky-300"
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            </a>
+            <Card item={item} />
           </li>
         ))}
       </ul>
     </Section>
+  );
+}
+
+/**
+ * 포트폴리오 카드 한 장.
+ * PC(md 이상)에서는 왼쪽 설명 + 오른쪽 캡처로 나뉘고,
+ * 모바일에서는 캡처가 위, 설명이 아래로 쌓입니다.
+ */
+function Card({
+  item,
+  featured = false,
+}: {
+  item: (typeof site.portfolio.items)[number];
+  featured?: boolean;
+}) {
+  return (
+    <a
+      href={item.href}
+      target="_blank"
+      rel="noreferrer"
+      className="group grid gap-6 overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 sm:p-6 md:grid-cols-2 md:items-center dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-500/40"
+    >
+      <Preview item={item} className="md:order-2" />
+
+      <div className="md:order-1 md:px-2">
+        {featured ? (
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-[11px] font-bold tracking-wide text-brand-800 dark:bg-brand-500/15 dark:text-brand-300">
+            대표작 · {item.type}
+          </span>
+        ) : (
+          <span className="block text-xs font-semibold tracking-wide text-brand-600 uppercase dark:text-brand-400">
+            {item.type}
+          </span>
+        )}
+
+        <h3
+          className={`flex items-center gap-2 font-extrabold text-slate-900 dark:text-white ${
+            featured ? "mt-4 text-2xl sm:text-3xl" : "mt-2 text-xl sm:text-2xl"
+          }`}
+        >
+          {item.client}
+          <ArrowUpRightIcon
+            className={`shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-500 ${
+              featured ? "size-5" : "size-4"
+            }`}
+          />
+        </h3>
+
+        <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-slate-400">
+          {item.description}
+        </p>
+
+        <ul className="mt-5 flex flex-wrap gap-1.5">
+          {item.tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-md bg-sky-50 px-2.5 py-1 text-[11px] font-medium text-sky-700 dark:bg-sky-500/10 dark:text-sky-300"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </a>
   );
 }
 
