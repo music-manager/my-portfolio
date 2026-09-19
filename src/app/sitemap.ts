@@ -10,6 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${site.siteUrl}/toolkit`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${site.siteUrl}/privacy`,
       lastModified: new Date(),
       changeFrequency: "yearly",
