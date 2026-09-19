@@ -380,6 +380,8 @@ export const site = {
     heading: "발매한 앨범",
     description:
       "AI로 제작해 DistroKid를 통해 전 세계 스트리밍 플랫폼에 발매한 앨범입니다. 아래에서 바로 들어볼 수 있습니다.",
+    // 앨범 제목 옆에 표시할 아티스트 이름. 비우면 표시되지 않습니다.
+    artist: "임창호",
     // 스포티파이 아티스트 페이지 주소를 넣으면 '전체 앨범 보기' 버튼이 표시됩니다.
     artistUrl: "https://open.spotify.com/artist/2w9UTjpzUn0fdVXxQKI4Uh",
     // cover: public/albums 안의 정사각형 이미지 경로입니다.

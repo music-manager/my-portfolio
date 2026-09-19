@@ -33,6 +33,7 @@ export default function Music() {
             <AlbumPlayer
               id={album.id}
               title={album.title}
+              artist={music.artist}
               cover={album.cover}
               tracks={album.tracks}
             />
