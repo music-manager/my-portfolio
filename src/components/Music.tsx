@@ -22,17 +22,19 @@ export default function Music() {
       title={music.heading}
       description={music.description}
     >
-      {/* 누른 뒤에 플레이어를 불러옵니다 (AlbumPlayer 주석 참고) */}
-      <ul className="grid gap-4 sm:grid-cols-2">
+      {/* 포트폴리오와 같이 한 줄에 하나씩 놓고 수록곡을 옆에 보여 줍니다.
+          누른 뒤에 플레이어를 불러옵니다 (AlbumPlayer 주석 참고) */}
+      <ul className="grid gap-5">
         {music.albums.map((album) => (
           <li
             key={album.id}
-            className="overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-900/5 dark:bg-white/5 dark:ring-white/10"
+            className="overflow-hidden rounded-2xl ring-1 ring-slate-900/5 dark:ring-white/10"
           >
             <AlbumPlayer
               id={album.id}
               title={album.title}
               cover={album.cover}
+              tracks={album.tracks}
             />
           </li>
         ))}
