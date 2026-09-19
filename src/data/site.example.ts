@@ -192,6 +192,19 @@ export const site = {
     },
   ],
 
+  // ---------- 5-1. 대표 프로젝트 (Projects 카드 아래에 크게 표시) ----------
+  // title 을 비우면 이 카드 전체가 표시되지 않습니다.
+  projectFeature: {
+    status: "",
+    title: "",
+    subtitle: "",
+    description: "",
+    points: [] as string[],
+    tags: [] as string[],
+    href: "",
+    cta: "",
+  },
+
   // ---------- 6. Services (의뢰 가능한 유료 서비스) ----------
   // accent: "naver" | "kmong" | "neutral" — 플랫폼 배지 색상
   // price / points / proofHref 는 비워 두면 해당 요소가 표시되지 않습니다.
