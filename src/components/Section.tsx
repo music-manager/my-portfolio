@@ -21,7 +21,13 @@ export default function Section({
   className = "",
 }: SectionProps) {
   return (
-    <section id={id} className={`scroll-mt-24 py-20 sm:py-28 ${className}`}>
+    // 앵커로 이동할 때 섹션의 위쪽 여백(py-20 / sm:py-28)을 건너뛰도록
+    // 음수 scroll-margin 을 줍니다. 이렇게 해야 제목이 고정 헤더 바로
+    // 아래에 붙고, 헤더와 제목 사이가 휑하게 비지 않습니다.
+    <section
+      id={id}
+      className={`-scroll-mt-16 py-20 sm:-scroll-mt-24 sm:py-28 ${className}`}
+    >
       <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
         <p className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-brand-600 uppercase dark:text-brand-400">
           <span className="h-px w-6 bg-gradient-to-r from-sunrise to-brand-400" />
