@@ -96,16 +96,23 @@ export default function AlbumPlayer({
         </h3>
 
         {tracks.length > 0 ? (
-          <ol className="mt-4 grid gap-1.5 sm:grid-cols-2 md:gap-x-6">
+          <ol className="mt-4 grid gap-3 sm:grid-cols-2 md:gap-x-6">
             {tracks.map((track, index) => (
-              <li
-                key={track}
-                className="flex items-baseline gap-2.5 text-sm text-slate-300"
-              >
-                <span className="w-4 shrink-0 text-right text-xs tabular-nums text-slate-500">
+              <li key={track} className="flex gap-2.5">
+                <span className="w-4 shrink-0 text-right text-xs leading-5 tabular-nums text-slate-500">
                   {index + 1}
                 </span>
-                <span className="min-w-0">{track}</span>
+                {/* 스포티파이처럼 곡 제목 아래에 아티스트를 적습니다 */}
+                <span className="min-w-0">
+                  <span className="block text-sm leading-5 text-slate-300">
+                    {track}
+                  </span>
+                  {artist ? (
+                    <span className="mt-0.5 block text-xs leading-4 text-slate-500">
+                      {artist}
+                    </span>
+                  ) : null}
+                </span>
               </li>
             ))}
           </ol>
