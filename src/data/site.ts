@@ -381,6 +381,24 @@ export const site = {
         tags: ["물류", "기업 홈페이지", "반응형"],
         thumbnail: "/portfolio/singyeonggi.jpg",
       },
+      {
+        client: "센치픽 (CmPick)",
+        type: "웹 도구",
+        description:
+          "가로·깊이·높이를 cm로 넣으면 그 공간에 실제로 들어가는 가전·가구만 골라 보여 주는 실측 검색 도구입니다.",
+        href: "https://cmpick.esedy.com",
+        tags: ["가전·가구", "실측 검색", "반응형"],
+        thumbnail: "/portfolio/cmpick.jpg",
+      },
+      {
+        client: "차종픽 (Car.esedy)",
+        type: "웹 도구",
+        description:
+          "제조사·차종·연식을 고르면 그 차에 맞는 와이퍼·에어컨필터 등 용품 규격과 호환 정보를 찾아 주는 검색 도구입니다.",
+        href: "https://car.esedy.com",
+        tags: ["차량용품", "규격 검색", "반응형"],
+        thumbnail: "/portfolio/carpick.jpg",
+      },
     ],
   },
 
