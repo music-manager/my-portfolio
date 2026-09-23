@@ -406,7 +406,7 @@ export const site = {
           "테슬라 차종과 연식을 고르면 그 차에 맞는 용품부터 보여 주는 검색 도구입니다. 호환 근거와 판매자 표기·검증 상태를 함께 표시합니다.",
         href: "https://teslapick.esedy.com",
         tags: ["테슬라", "차량용품", "반응형"],
-        thumbnail: "/portfolio/teslapick.jpg",
+        thumbnail: "/portfolio/teslapick-2.jpg",
       },
     ],
   },
