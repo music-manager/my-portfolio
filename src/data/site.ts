@@ -481,7 +481,7 @@ export const site = {
           "SNS에서 본 생활용품의 가격·규격·품번을 한 번에 찾아 주는 검색 도구입니다. 공식 판매자 이력을 기준으로 실재성과 품번을 확인합니다.",
         href: "https://item.esedy.com",
         tags: ["생활용품", "품번 검색", "반응형"],
-        thumbnail: "/portfolio/itempick.jpg",
+        thumbnail: "/portfolio/itempick-2.jpg",
       },
     ],
   },
