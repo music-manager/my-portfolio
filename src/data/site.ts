@@ -208,6 +208,8 @@ export const site = {
 
   // ---------- 4. Projects (운영 중인 사이트·도구) ----------
   // 운영 중인 사이트 / 채널 / 서비스를 카드로 보여줍니다.
+  // logo: public/projects 안의 정사각형 로고 경로입니다.
+  // 비워 두면 emoji 값이 대신 표시됩니다.
   projects: [
     {
       title: "펫담다",
@@ -217,6 +219,7 @@ export const site = {
       tags: ["반려동물", "종합 플랫폼"],
       status: "운영 중",
       emoji: "🐾",
+      logo: "/projects/petdamda.png",
     },
     {
       title: "생활계산기 (esedy)",
@@ -226,6 +229,7 @@ export const site = {
       tags: ["웹 플랫폼", "계산기"],
       status: "운영 중",
       emoji: "🧮",
+      logo: "/projects/esedy.png",
     },
     {
       title: "센치픽 (CmPick)",
@@ -235,6 +239,7 @@ export const site = {
       tags: ["가전·가구", "실측 검색"],
       status: "운영 중",
       emoji: "📐",
+      logo: "/projects/cmpick.png",
     },
     {
       title: "차종픽 (Car.esedy)",
@@ -244,6 +249,7 @@ export const site = {
       tags: ["차량용품", "규격 검색"],
       status: "운영 중",
       emoji: "🚗",
+      logo: "/projects/carpick.png",
     },
     {
       title: "테슬라픽 (TeslaPick)",
@@ -253,6 +259,7 @@ export const site = {
       tags: ["테슬라", "차량용품"],
       status: "운영 중",
       emoji: "⚡",
+      logo: "/projects/teslapick.png",
     },
     {
       title: "꿀템픽 (ItemPick)",
@@ -262,6 +269,7 @@ export const site = {
       tags: ["생활용품", "품번 검색"],
       status: "운영 중",
       emoji: "🍯",
+      logo: "/projects/itempick.png",
     },
     {
       title: "네이버 블로그 · 지출추적자",
@@ -271,6 +279,7 @@ export const site = {
       tags: ["네이버 블로그", "SEO", "제휴 마케팅"],
       status: "운영 중",
       emoji: "✍️",
+      logo: "",
     },
     {
       title: "네이버 카페 · 지출추적자",
@@ -280,6 +289,7 @@ export const site = {
       tags: ["네이버 카페", "커뮤니티"],
       status: "운영 중",
       emoji: "☕",
+      logo: "",
     },
     {
       title: "티스토리 블로그",
@@ -289,6 +299,7 @@ export const site = {
       tags: ["티스토리", "구글 SEO"],
       status: "운영 중",
       emoji: "📝",
+      logo: "",
     },
     {
       title: "콘텐츠 자동화 툴킷",
@@ -299,6 +310,7 @@ export const site = {
       tags: ["Python", "ffmpeg", "Whisper"],
       status: "개발 중",
       emoji: "🛠️",
+      logo: "",
     },
   ],
 

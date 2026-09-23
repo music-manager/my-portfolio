@@ -162,6 +162,8 @@ export const site = {
   },
 
   // ---------- 5. Projects (운영 중인 사이트·도구) ----------
+  // logo: public/projects 안의 정사각형 로고 경로입니다.
+  // 비워 두면 emoji 값이 대신 표시됩니다.
   projects: [
     {
       title: "블로그",
@@ -171,6 +173,7 @@ export const site = {
       tags: ["블로그", "SEO"],
       status: "운영 중",
       emoji: "✍️",
+      logo: "",
     },
     {
       title: "커뮤니티",
@@ -180,6 +183,7 @@ export const site = {
       tags: ["커뮤니티"],
       status: "운영 중",
       emoji: "☕",
+      logo: "",
     },
     {
       title: "내부 제작 도구",
@@ -189,6 +193,7 @@ export const site = {
       tags: ["Python", "자동화"],
       status: "개발 중",
       emoji: "🛠️",
+      logo: "",
     },
   ],
 
