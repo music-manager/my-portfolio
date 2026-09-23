@@ -210,6 +210,60 @@ export const site = {
   // 운영 중인 사이트 / 채널 / 서비스를 카드로 보여줍니다.
   projects: [
     {
+      title: "펫담다",
+      description:
+        "반려동물 생애주기에 맞춘 케어와 장례 연계 서비스를 제공하는 종합 플랫폼입니다.",
+      href: "https://petdamda.com/",
+      tags: ["반려동물", "종합 플랫폼"],
+      status: "운영 중",
+      emoji: "🐾",
+    },
+    {
+      title: "생활계산기 (esedy)",
+      description:
+        "연봉·퇴직금·대출·통신비 등 생활 속 계산을 한곳에서 처리하는 웹 플랫폼입니다.",
+      href: "https://esedy.com/",
+      tags: ["웹 플랫폼", "계산기"],
+      status: "운영 중",
+      emoji: "🧮",
+    },
+    {
+      title: "센치픽 (CmPick)",
+      description:
+        "가로·깊이·높이를 cm로 넣으면 그 공간에 실제로 들어가는 가전·가구만 골라 보여 줍니다.",
+      href: "https://cmpick.esedy.com",
+      tags: ["가전·가구", "실측 검색"],
+      status: "운영 중",
+      emoji: "📐",
+    },
+    {
+      title: "차종픽 (Car.esedy)",
+      description:
+        "제조사·차종·연식을 고르면 그 차에 맞는 용품 규격과 호환 정보를 찾아 줍니다.",
+      href: "https://car.esedy.com",
+      tags: ["차량용품", "규격 검색"],
+      status: "운영 중",
+      emoji: "🚗",
+    },
+    {
+      title: "테슬라픽 (TeslaPick)",
+      description:
+        "테슬라 차종과 연식을 고르면 그 차에 맞는 용품부터 보여 줍니다. 호환 근거를 함께 표시합니다.",
+      href: "https://teslapick.esedy.com",
+      tags: ["테슬라", "차량용품"],
+      status: "운영 중",
+      emoji: "⚡",
+    },
+    {
+      title: "꿀템픽 (ItemPick)",
+      description:
+        "SNS에서 본 생활용품의 가격·규격·품번을 한 번에 찾아 줍니다. 공식 판매자 이력으로 확인합니다.",
+      href: "https://item.esedy.com",
+      tags: ["생활용품", "품번 검색"],
+      status: "운영 중",
+      emoji: "🍯",
+    },
+    {
       title: "네이버 블로그 · 지출추적자",
       description:
         "생활비 절약과 지출 관리를 다루는 검색 유입 중심 블로그입니다. SEO 최적화 글을 발행하고 제휴 링크로 수익화합니다.",
