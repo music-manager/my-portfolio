@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
 import { ArrowUpRightIcon } from "./Icons";
@@ -108,9 +109,21 @@ function Body({ project }: { project: Project }) {
   return (
     <>
       <div className="flex items-start justify-between gap-4">
-        <span className="text-2xl" aria-hidden>
-          {project.emoji}
-        </span>
+        {/* 사이트 로고가 있으면 로고를, 없으면 이모지를 보여 줍니다 */}
+        {project.logo ? (
+          <Image
+            src={project.logo}
+            alt=""
+            width={36}
+            height={36}
+            className="size-9 rounded-lg bg-white object-contain ring-1 ring-slate-900/5 dark:ring-white/10"
+            aria-hidden
+          />
+        ) : (
+          <span className="flex size-9 items-center justify-center text-2xl" aria-hidden>
+            {project.emoji}
+          </span>
+        )}
         <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
           {project.status}
         </span>
