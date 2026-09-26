@@ -41,7 +41,7 @@ export default function Projects() {
         )}
       </div>
 
-      {/* 카드 4장 아래에 대표 프로젝트를 한 칸 크게 둡니다 */}
+      {/* 카드 목록 아래에 대표 프로젝트를 한 칸 크게 둡니다 */}
       {site.projectFeature.title ? <Feature /> : null}
     </Section>
   );
@@ -49,12 +49,12 @@ export default function Projects() {
 
 function Feature() {
   const f = site.projectFeature;
+  const className = `group mt-5 grid gap-6 overflow-hidden rounded-3xl border border-brand-200/70 bg-gradient-to-br from-brand-50 via-white to-sunrise/10 p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 sm:p-8 md:items-center dark:border-brand-500/20 dark:from-white/5 dark:via-white/[0.03] dark:to-white/5 dark:hover:border-brand-500/40 ${
+    f.image ? "md:grid-cols-[1fr_1.15fr] md:gap-8" : ""
+  }`;
 
-  return (
-    <Link
-      href={f.href}
-      className="group mt-5 grid gap-6 overflow-hidden rounded-3xl border border-brand-200/70 bg-gradient-to-br from-brand-50 via-white to-sunrise/10 p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 sm:p-8 md:grid-cols-[1.2fr_1fr] md:items-center dark:border-brand-500/20 dark:from-white/5 dark:via-white/[0.03] dark:to-white/5 dark:hover:border-brand-500/40"
-    >
+  const body = (
+    <>
       <div>
         <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-[11px] font-bold tracking-wide text-brand-800 shadow-sm ring-1 ring-brand-200/60 dark:bg-white/10 dark:text-brand-300 dark:ring-white/10">
           {f.status} · {f.subtitle}
@@ -69,20 +69,7 @@ function Feature() {
           {f.description}
         </p>
 
-        <ul className="mt-5 flex flex-wrap gap-1.5">
-          {f.tags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-md bg-white px-2.5 py-1 text-[11px] font-medium text-brand-800 shadow-sm dark:bg-white/10 dark:text-brand-300"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        <ul className="space-y-2.5">
+        <ul className="mt-5 space-y-2.5">
           {f.points.map((point) => (
             <li
               key={point}
@@ -94,14 +81,56 @@ function Feature() {
           ))}
         </ul>
 
+        <ul className="mt-5 flex flex-wrap gap-1.5">
+          {f.tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-md bg-white px-2.5 py-1 text-[11px] font-medium text-brand-800 shadow-sm dark:bg-white/10 dark:text-brand-300"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+
         {f.cta ? (
           <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sunrise to-brand-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition group-hover:brightness-110">
             {f.cta}
             <ArrowUpRightIcon className="size-4" />
           </span>
         ) : null}
+
+        {f.note ? (
+          <p className="mt-3 text-xs text-slate-500 dark:text-slate-500">
+            {f.note}
+          </p>
+        ) : null}
       </div>
+
+      {/* 실제 화면. 모바일에서는 글보다 먼저 보여 줍니다 */}
+      {f.image ? (
+        <div className="-order-1 overflow-hidden rounded-2xl bg-[#07101f] shadow-lg ring-1 ring-slate-900/10 md:order-none dark:ring-white/10">
+          <Image
+            src={f.image}
+            alt={f.imageAlt}
+            width={1774}
+            height={887}
+            sizes="(min-width: 1152px) 600px, (min-width: 768px) 52vw, 100vw"
+            className="h-auto w-full transition duration-500 group-hover:scale-[1.02]"
+          />
+        </div>
+      ) : null}
+    </>
+  );
+
+  // "/" 로 시작하면 이 사이트 안의 페이지이므로 새 창으로 열지 않습니다
+  return f.href.startsWith("/") ? (
+    <Link href={f.href} className={className}>
+      {body}
     </Link>
+  ) : (
+    <a href={f.href} target="_blank" rel="noreferrer" className={className}>
+      {body}
+    </a>
   );
 }
 

@@ -208,6 +208,9 @@ export const site = {
     tags: [] as string[],
     href: "",
     cta: "",
+    image: "",
+    imageAlt: "",
+    note: "",
   },
 
   // ---------- 6. Services (의뢰 가능한 유료 서비스) ----------
