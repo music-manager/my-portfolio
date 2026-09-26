@@ -488,6 +488,15 @@ export const site = {
         tags: ["생활용품", "품번 검색", "반응형"],
         thumbnail: "/portfolio/itempick-2.jpg",
       },
+      {
+        client: "LCH AI OFFICE",
+        type: "업무 시스템",
+        description:
+          "AI 직원 10명과 사이트·프로젝트·배포를 한곳에서 관리하는 대표 전용 통합 운영센터입니다. 접속하면 로그인 화면이 먼저 나옵니다.",
+        href: "https://office.esedy.com",
+        tags: ["AI 운영", "대시보드", "로그인"],
+        thumbnail: "/portfolio/lch-office.jpg",
+      },
     ],
   },
 
