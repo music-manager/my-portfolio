@@ -317,19 +317,24 @@ export const site = {
   // ---------- 4-1. 대표 프로젝트 (Projects 카드 아래에 크게 표시) ----------
   // title 을 비우면 이 카드 전체가 표시되지 않습니다.
   projectFeature: {
-    status: "개발 중",
-    title: "콘텐츠 허브",
-    subtitle: "블로그 글 자동화 도구",
+    status: "운영 중",
+    title: "LCH AI OFFICE",
+    subtitle: "AI 운영 통합 센터",
     description:
-      "주제 하나를 넣으면 공식 자료를 확인해 원본을 쓰고, 채널마다 새 문장으로 다시 써서 승인 뒤 예약 발행까지 이어집니다.",
+      "AI 직원 10명과 사이트·프로젝트·배포를 한곳에서 관리하는 통합 운영센터입니다. 대표가 방향을 정하면 AI 직원이 개발·검수·조사·마케팅·운영을 나눠 맡습니다.",
     points: [
-      "공식 출처를 먼저 확인하고 근거가 있는 내용만 씁니다",
-      "채널마다 제목·도입·문장 구조를 새로 씁니다",
-      "검수함에서 직접 승인한 글만 예약 시간에 나갑니다",
+      "ChatGPT·Claude·Codex·Gemini 등 AI 직원 10명이 역할을 나눠 일합니다",
+      "사이트별 방문자·전환율·수익과 배포·가동 상태를 한 화면에서 봅니다",
+      "최종 지시와 승인은 대표가 직접 합니다",
     ],
-    tags: ["Python", "네이버", "티스토리", "예약 발행"],
-    href: "/content-hub",
-    cta: "화면 미리보기",
+    tags: ["ChatGPT", "Claude", "Gemini", "Supabase", "GitHub"],
+    href: "https://office.esedy.com",
+    cta: "사이트 보기",
+    // 카드 오른쪽에 보여 줄 화면 (public 폴더 기준 경로). 비우면 표시하지 않습니다.
+    image: "/projects/lch-office.jpg",
+    imageAlt: "LCH AI OFFICE 의 AI 조직도 및 직원 현황 화면",
+    // 버튼 아래 작은 안내 문구. 비우면 표시하지 않습니다.
+    note: "대표 전용 내부 도구라 접속하면 로그인 화면이 먼저 나옵니다.",
   },
 
   // ---------- 5. Services (의뢰 가능한 유료 서비스) ----------
