@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { site } from "@/data/site";
 import { ArrowUpRightIcon, MailIcon, socialIcons } from "./Icons";
+import PausableLink from "./PausableLink";
 
 // 소셜 아이콘마다 브랜드 색을 입혀 히어로에 색감을 더합니다
 const socialColors: Record<string, string> = {
@@ -69,18 +70,16 @@ export default function Hero() {
                 const Icon = socialIcons[social.icon];
                 return (
                   <li key={social.label}>
-                    <a
+                    <PausableLink
+                      as="span"
                       href={social.href}
-                      target={social.href.startsWith("http") ? "_blank" : undefined}
-                      rel="noreferrer"
-                      aria-label={social.label}
-                      title={social.label}
+                      label={social.label}
                       className={`inline-flex size-11 items-center justify-center rounded-full bg-white shadow-md shadow-slate-900/5 ring-1 ring-slate-900/5 transition hover:-translate-y-1 hover:shadow-lg dark:bg-white/10 dark:ring-white/10 ${
                         socialColors[social.icon] ?? "text-slate-600"
                       }`}
                     >
                       <Icon className="size-5" />
-                    </a>
+                    </PausableLink>
                   </li>
                 );
               })}

@@ -12,6 +12,9 @@
 import type { ServiceAccent, StatAccent } from "./types";
 
 export const site = {
+  // true 이면 메일 링크만 살리고 채널·프로젝트·포트폴리오·서비스·연락처 링크를 멈춥니다.
+  linksPaused: false,
+
   // ---------- 1. 기본 정보 (SEO / 브라우저 탭) ----------
   name: "홍길동",
   role: "웹 개발자 · 콘텐츠 크리에이터",

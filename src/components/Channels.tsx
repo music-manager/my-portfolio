@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { site } from "@/data/site";
 import { ArrowUpRightIcon, YoutubeIcon } from "./Icons";
+import PausableLink, { isLinkActive } from "./PausableLink";
 import Section from "./Section";
 
 // 주제별 색을 달리해 채널 카드에 색감을 줍니다
@@ -29,10 +30,8 @@ export default function Channels() {
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {channels.items.map((channel) => (
           <li key={channel.handle}>
-            <a
+            <PausableLink
               href={channel.url}
-              target="_blank"
-              rel="noreferrer"
               className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-500/40"
             >
               <div className="flex items-center gap-3">
@@ -57,7 +56,9 @@ export default function Channels() {
                 <div className="min-w-0 flex-1">
                   <h3 className="flex items-center gap-1 text-base font-semibold text-slate-900 dark:text-white">
                     <span className="truncate">{channel.name}</span>
-                    <ArrowUpRightIcon className="size-3.5 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-500" />
+                    {isLinkActive(channel.url) ? (
+                      <ArrowUpRightIcon className="size-3.5 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-500" />
+                    ) : null}
                   </h3>
                   <p className="truncate text-xs text-slate-500 dark:text-slate-500">
                     {channel.handle}
@@ -79,7 +80,7 @@ export default function Channels() {
                   {channel.tag}
                 </span>
               </div>
-            </a>
+            </PausableLink>
           </li>
         ))}
       </ul>

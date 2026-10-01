@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { site } from "@/data/site";
 import { ArrowUpRightIcon } from "./Icons";
+import PausableLink, { isLinkActive } from "./PausableLink";
 import Section from "./Section";
 
 type Project = (typeof site.projects)[number];
@@ -17,28 +17,19 @@ export default function Projects() {
       id="projects"
       eyebrow="Projects"
       title="운영 중인 사이트와 도구"
-      description="직접 기획하고 운영하는 사이트와 내부 제작 도구입니다. 카드를 누르면 해당 사이트로 이동합니다."
+      description={
+        site.linksPaused
+          ? "직접 기획하고 운영하는 사이트와 내부 제작 도구입니다."
+          : "직접 기획하고 운영하는 사이트와 내부 제작 도구입니다. 카드를 누르면 해당 사이트로 이동합니다."
+      }
       className="bg-slate-50/70 dark:bg-white/[0.03]"
     >
       <div className="grid gap-5 sm:grid-cols-2">
-        {site.projects.map((project) =>
-          // "/" 로 시작하면 이 사이트 안의 페이지이므로 새 창으로 열지 않습니다
-          project.href.startsWith("/") ? (
-            <Link key={project.title} href={project.href} className={cardClass}>
-              <Body project={project} />
-            </Link>
-          ) : (
-            <a
-              key={project.title}
-              href={project.href}
-              target="_blank"
-              rel="noreferrer"
-              className={cardClass}
-            >
-              <Body project={project} />
-            </a>
-          ),
-        )}
+        {site.projects.map((project) => (
+          <PausableLink key={project.title} href={project.href} className={cardClass}>
+            <Body project={project} />
+          </PausableLink>
+        ))}
       </div>
 
       {/* 카드 목록 아래에 대표 프로젝트를 한 칸 크게 둡니다 */}
@@ -49,6 +40,7 @@ export default function Projects() {
 
 function Feature() {
   const f = site.projectFeature;
+  const active = isLinkActive(f.href);
   const className = `group mt-5 grid gap-6 overflow-hidden rounded-3xl border border-brand-200/70 bg-gradient-to-br from-brand-50 via-white to-sunrise/10 p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 sm:p-8 md:items-center dark:border-brand-500/20 dark:from-white/5 dark:via-white/[0.03] dark:to-white/5 dark:hover:border-brand-500/40 ${
     f.image ? "md:grid-cols-[1fr_1.15fr] md:gap-8" : ""
   }`;
@@ -62,7 +54,9 @@ function Feature() {
 
         <h3 className="mt-4 flex items-center gap-2 text-2xl font-extrabold text-slate-900 sm:text-3xl dark:text-white">
           {f.title}
-          <ArrowUpRightIcon className="size-5 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-500" />
+          {active ? (
+            <ArrowUpRightIcon className="size-5 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-500" />
+          ) : null}
         </h3>
 
         <p className="mt-3 text-base leading-relaxed text-slate-600 dark:text-slate-400">
@@ -95,7 +89,7 @@ function Feature() {
         {f.cta ? (
           <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sunrise to-brand-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition group-hover:brightness-110">
             {f.cta}
-            <ArrowUpRightIcon className="size-4" />
+            {active ? <ArrowUpRightIcon className="size-4" /> : null}
           </span>
         ) : null}
 
@@ -122,15 +116,10 @@ function Feature() {
     </>
   );
 
-  // "/" 로 시작하면 이 사이트 안의 페이지이므로 새 창으로 열지 않습니다
-  return f.href.startsWith("/") ? (
-    <Link href={f.href} className={className}>
+  return (
+    <PausableLink href={f.href} className={className}>
       {body}
-    </Link>
-  ) : (
-    <a href={f.href} target="_blank" rel="noreferrer" className={className}>
-      {body}
-    </a>
+    </PausableLink>
   );
 }
 
@@ -160,7 +149,9 @@ function Body({ project }: { project: Project }) {
 
       <h3 className="mt-4 flex items-center gap-1.5 text-lg font-semibold text-slate-900 dark:text-white">
         {project.title}
-        <ArrowUpRightIcon className="size-4 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-500" />
+        {isLinkActive(project.href) ? (
+          <ArrowUpRightIcon className="size-4 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-500" />
+        ) : null}
       </h3>
 
       <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
