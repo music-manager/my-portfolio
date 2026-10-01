@@ -1,5 +1,6 @@
 import { site } from "@/data/site";
 import { ArrowUpRightIcon, NaverIcon } from "./Icons";
+import PausableLink, { isLinkActive } from "./PausableLink";
 import Section from "./Section";
 
 const accentStyles = {
@@ -73,29 +74,28 @@ export default function Services() {
             {/* 보조 링크가 없는 카드도 같은 자리를 차지하게 해
                 세 카드의 CTA 버튼 줄이 항상 같은 높이에 놓입니다 */}
             <div className="mt-6 flex flex-1 flex-col justify-end gap-3">
-              <a
+              <PausableLink
                 href={service.href}
-                target="_blank"
-                rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
               >
                 {service.cta}
-                <ArrowUpRightIcon className="size-4" />
-              </a>
+                {isLinkActive(service.href) ? (
+                  <ArrowUpRightIcon className="size-4" />
+                ) : null}
+              </PausableLink>
 
               <span className="flex h-5 items-center justify-center">
                 {service.proofHref ? (
-                  <a
+                  <PausableLink
+                    as="span"
                     href={service.proofHref}
-                    target={
-                      service.proofHref.startsWith("http") ? "_blank" : undefined
-                    }
-                    rel="noreferrer"
                     className={`inline-flex items-center gap-1.5 text-xs font-semibold underline underline-offset-4 transition ${proofStyles[service.accent]}`}
                   >
                     {service.proofLabel}
-                    <ArrowUpRightIcon className="size-3" />
-                  </a>
+                    {isLinkActive(service.proofHref) ? (
+                      <ArrowUpRightIcon className="size-3" />
+                    ) : null}
+                  </PausableLink>
                 ) : null}
               </span>
             </div>

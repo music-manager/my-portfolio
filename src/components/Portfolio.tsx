@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { site } from "@/data/site";
 import { ArrowUpRightIcon } from "./Icons";
+import PausableLink, { isLinkActive } from "./PausableLink";
 import Section from "./Section";
 
 export default function Portfolio() {
@@ -47,10 +48,8 @@ function Card({
   featured?: boolean;
 }) {
   return (
-    <a
+    <PausableLink
       href={item.href}
-      target="_blank"
-      rel="noreferrer"
       className="group grid gap-6 overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 sm:p-6 md:grid-cols-2 md:items-center dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-500/40"
     >
       <Preview item={item} className="md:order-2" />
@@ -72,11 +71,13 @@ function Card({
           }`}
         >
           {item.client}
-          <ArrowUpRightIcon
-            className={`shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-500 ${
-              featured ? "size-5" : "size-4"
-            }`}
-          />
+          {isLinkActive(item.href) ? (
+            <ArrowUpRightIcon
+              className={`shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-500 ${
+                featured ? "size-5" : "size-4"
+              }`}
+            />
+          ) : null}
         </h3>
 
         <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-slate-400">
@@ -94,7 +95,7 @@ function Card({
           ))}
         </ul>
       </div>
-    </a>
+    </PausableLink>
   );
 }
 

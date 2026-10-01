@@ -1,5 +1,6 @@
 import { site } from "@/data/site";
 import { ArrowUpRightIcon, socialIcons } from "./Icons";
+import PausableLink, { isLinkActive } from "./PausableLink";
 import Section from "./Section";
 
 export default function Contact() {
@@ -29,11 +30,9 @@ export default function Contact() {
           {site.socials.map((social) => {
             const Icon = socialIcons[social.icon];
             return (
-              <a
+              <PausableLink
                 key={social.label}
                 href={social.href}
-                target={social.href.startsWith("http") ? "_blank" : undefined}
-                rel="noreferrer"
                 className="group flex items-center gap-3 rounded-xl border border-slate-200 bg-white/70 px-4 py-3.5 transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-500/40"
               >
                 <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-600 transition group-hover:bg-gradient-to-br group-hover:from-sunrise group-hover:to-brand-500 group-hover:text-white dark:bg-white/10 dark:text-slate-300">
@@ -42,8 +41,10 @@ export default function Contact() {
                 <span className="flex-1 text-sm font-semibold text-slate-800 dark:text-slate-200">
                   {social.label}
                 </span>
-                <ArrowUpRightIcon className="size-4 text-slate-400 transition group-hover:text-brand-500" />
-              </a>
+                {isLinkActive(social.href) ? (
+                  <ArrowUpRightIcon className="size-4 text-slate-400 transition group-hover:text-brand-500" />
+                ) : null}
+              </PausableLink>
             );
           })}
         </div>
