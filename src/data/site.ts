@@ -9,8 +9,8 @@ import type { ServiceAccent, StatAccent } from "./types";
 // true  : 채널·프로젝트·포트폴리오·서비스·연락처·첫 화면 소셜 아이콘의 링크를 전부 멈춥니다.
 //         카드는 그대로 보이지만 눌러도 이동하지 않습니다. 메일 링크만 살아 있습니다.
 // false : 모든 링크가 원래대로 동작합니다.
-// (esedy.com 심사 기간 동안 이 사이트에서 넘어가는 방문을 막으려고 켜 두었습니다)
-const LINKS_PAUSED = true;
+// (esedy.com 심사 기간에 true 로 켜 두었다가 다시 껐습니다)
+const LINKS_PAUSED = false;
 
 export const site = {
   linksPaused: LINKS_PAUSED,
