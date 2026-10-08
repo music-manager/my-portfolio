@@ -427,7 +427,7 @@ export const site = {
         href: "https://petdamda.com/",
         tags: ["반려동물", "종합 플랫폼", "반응형"],
         // 첫 화면 캡처 (16:9). public/portfolio/README.md 참고
-        thumbnail: "/portfolio/petdamda.jpg",
+        thumbnail: "/portfolio/petdamda-2.jpg",
       },
       {
         client: "생활계산기 (esedy)",
@@ -472,7 +472,7 @@ export const site = {
           "가로·깊이·높이를 cm로 넣으면 그 공간에 실제로 들어가는 가전·가구만 골라 보여 주는 실측 검색 도구입니다.",
         href: "https://cmpick.esedy.com",
         tags: ["가전·가구", "실측 검색", "반응형"],
-        thumbnail: "/portfolio/cmpick.jpg",
+        thumbnail: "/portfolio/cmpick-2.jpg",
       },
       {
         client: "차종픽 (Car.esedy)",
@@ -481,7 +481,7 @@ export const site = {
           "제조사·차종·연식을 고르면 그 차에 맞는 와이퍼·에어컨필터 등 용품 규격과 호환 정보를 찾아 주는 검색 도구입니다.",
         href: "https://car.esedy.com",
         tags: ["차량용품", "규격 검색", "반응형"],
-        thumbnail: "/portfolio/carpick.jpg",
+        thumbnail: "/portfolio/carpick-2.jpg",
       },
       {
         client: "테슬라픽 (TeslaPick)",
@@ -490,7 +490,7 @@ export const site = {
           "테슬라 차종과 연식을 고르면 그 차에 맞는 용품부터 보여 주는 검색 도구입니다. 호환 근거와 판매자 표기·검증 상태를 함께 표시합니다.",
         href: "https://teslapick.esedy.com",
         tags: ["테슬라", "차량용품", "반응형"],
-        thumbnail: "/portfolio/teslapick-3.jpg",
+        thumbnail: "/portfolio/teslapick-4.jpg",
       },
       {
         client: "꿀템픽 (ItemPick)",
@@ -499,7 +499,7 @@ export const site = {
           "SNS에서 본 생활용품의 가격·규격·품번을 한 번에 찾아 주는 검색 도구입니다. 공식 판매자 이력을 기준으로 실재성과 품번을 확인합니다.",
         href: "https://item.esedy.com",
         tags: ["생활용품", "품번 검색", "반응형"],
-        thumbnail: "/portfolio/itempick-2.jpg",
+        thumbnail: "/portfolio/itempick-3.jpg",
       },
       {
         client: "LCH AI OFFICE",
