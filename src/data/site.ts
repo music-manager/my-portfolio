@@ -427,7 +427,7 @@ export const site = {
         href: "https://petdamda.com/",
         tags: ["반려동물", "종합 플랫폼", "반응형"],
         // 첫 화면 캡처 (16:9). public/portfolio/README.md 참고
-        thumbnail: "/portfolio/petdamda-2.jpg",
+        thumbnail: "/portfolio/petdamda-3.jpg",
       },
       {
         client: "생활계산기 (esedy)",
