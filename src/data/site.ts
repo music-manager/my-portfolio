@@ -281,6 +281,16 @@ export const site = {
       logo: "/projects/itempick-2.png",
     },
     {
+      title: "박스핏 (BoxFit)",
+      description:
+        "물건 크기만 넣으면 딱 맞는 택배 박스를 찾아 줍니다. 우체국 박스 6종을 6가지 방향으로 모두 검사합니다.",
+      href: "https://boxfit.esedy.com",
+      tags: ["택배 박스", "규격 검사"],
+      status: "운영 중",
+      emoji: "📦",
+      logo: "/projects/boxfit.png",
+    },
+    {
       title: "네이버 블로그 · 지출추적자",
       description:
         "생활비 절약과 지출 관리를 다루는 검색 유입 중심 블로그입니다. SEO 최적화 글을 발행하고 제휴 링크로 수익화합니다.",
@@ -500,6 +510,15 @@ export const site = {
         href: "https://item.esedy.com",
         tags: ["생활용품", "품번 검색", "반응형"],
         thumbnail: "/portfolio/itempick-3.jpg",
+      },
+      {
+        client: "박스핏 (BoxFit)",
+        type: "웹 도구",
+        description:
+          "물건의 가로·세로·높이를 입력하면 딱 맞는 택배 박스를 찾아 주는 도구입니다. 우체국 박스 6종을 6가지 회전 방향으로 모두 검사하고, 편의점 택배 접수 규격도 확인할 수 있습니다.",
+        href: "https://boxfit.esedy.com",
+        tags: ["택배 박스", "규격 검사", "반응형"],
+        thumbnail: "/portfolio/boxfit.jpg",
       },
       {
         client: "LCH AI OFFICE",
