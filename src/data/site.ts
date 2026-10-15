@@ -518,7 +518,7 @@ export const site = {
           "물건의 가로·세로·높이를 입력하면 딱 맞는 택배 박스를 찾아 주는 도구입니다. 우체국 박스 6종을 6가지 회전 방향으로 모두 검사하고, 편의점 택배 접수 규격도 확인할 수 있습니다.",
         href: "https://boxfit.esedy.com",
         tags: ["택배 박스", "규격 검사", "반응형"],
-        thumbnail: "/portfolio/boxfit.jpg",
+        thumbnail: "/portfolio/boxfit-2.jpg",
       },
       {
         client: "LCH AI OFFICE",
