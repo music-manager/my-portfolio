@@ -231,10 +231,10 @@ export const site = {
       logo: "/projects/petdamda-2.png",
     },
     {
-      title: "생활계산기 (esedy)",
+      title: "생활계산기 (Calc.esedy)",
       description:
         "연봉·퇴직금·대출·통신비 등 생활 속 계산을 한곳에서 처리하는 웹 플랫폼입니다.",
-      href: "https://esedy.com/",
+      href: "https://calc.esedy.com",
       tags: ["웹 플랫폼", "계산기"],
       status: "운영 중",
       emoji: "🧮",
@@ -440,11 +440,11 @@ export const site = {
         thumbnail: "/portfolio/petdamda-3.jpg",
       },
       {
-        client: "생활계산기 (esedy)",
+        client: "생활계산기 (Calc.esedy)",
         type: "웹 플랫폼",
         description:
           "생활 속에서 자주 쓰는 계산을 한곳에서 처리할 수 있는 반응형 웹 플랫폼입니다.",
-        href: "https://esedy.com/",
+        href: "https://calc.esedy.com",
         tags: ["웹 플랫폼", "계산기", "반응형"],
         thumbnail: "/portfolio/esedy.jpg",
       },
